@@ -1,74 +1,15 @@
 /* Organic Result (including subresults, which are indented) */
 
-div.result-organic span.url {
-    display: block;
+div.relevance ul li {
+    float: left;
+    list-style-type: none;
+    padding: 10px;
+    /* display: block;
     font-size: 14px;
-    color: #202124;
+    color: #202124; */
 }
 
-    div.result-organic span.url > span.level {
-        color: #5F6368;
-    }
-
-    div.result-organic span.url > span.level::before {
-        content: "\203a";
-        padding: 0 4px 0 1px;
-    }
-
-div.result-organic a {
-    text-decoration: none;
-}
-
-div.result-organic h3 {
-    margin: 0;
-    padding: 5px 0 0 0;
-    line-height: 26px;
-    height: 26px;
-    font-size: 20px;
-    font-weight: normal;
-}
-
-div.result-organic a:hover h3 {
-    text-decoration: underline;
-}
-
-div.result-organic span.snippet {
-    line-height: 22px;
-    font-size: 14px;
-    color: #5F6368;
-    word-wrap: break-word;
-}
-
-    div.result-organic span.snippet span.date {
-        color: #70757A;
-    }
-
-    div.result-organic span.snippet span.date::after {
-        content: "\00a0\2014\00a0";
-    }
-
-div.result-organic > div.subresults {
-    margin-left: 16px;
-}
-
-div.result-organic > div.subresults > span {
-    display: inline-block;
-    margin-top: 10px;
-}
-
-div.result-organic > div.subresults > span.more {
-    display: block;
-    font-size: 14px;
-}
-
-    div.result-organic > div.subresults > span.more:hover {
-        text-decoration: underline;
-    }
-
-    div.result-organic > div.subresults > span.more::after {
-        content: "\00a0\203a\203a";
-    }
-
+    
 /* Box Element Container */
 
 div.box-container {
@@ -76,131 +17,12 @@ div.box-container {
     border-radius: 8px;
 }
 
-/* Entity Card */
-
-div.entity-card {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-div.entity-card .padding {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-div.entity-card > h3 {
-    padding: 12px 0 4px 0;
-    position: relative;
-    margin: 0;
-    font-size: 30px;
-    font-weight: normal;
-    line-height: 36px;
-    color: #202124;
-    word-wrap: break-word;
-}
-
-    div.entity-card > h3 i.share {
-        position: absolute;
-        margin-top: 5px;
-        font-size: 25px;
-        right: 15px;
-        color: #808080;
-    }
-
-div.entity-card > span.subtitle {
-    display: block;
-    padding-bottom: 15px;
-    color: #70757A;
-    word-wrap: break-word;
-    font-size: 14px;
-    line-height: 1.58;
-    border-bottom: 1px solid #DFE1E5;
-}
-
-div.entity-card > span.blurb {
-    display: block;
-    margin: 13px 0 13px 0;
-    font-size: 14px;
-    line-height: 22.12px;
-    word-wrap: break-word;
-    color: #4D5156;
-}
-
-div.entity-card > span.attribute span.property {
-    font-weight: bold;
-    color: #202124;
-}
-
-div.entity-card > span.attribute span.property::after {
-    content: ":\00a0";
-}
-
-div.entity-card > ul.attributes {
-    margin: 7px 0 0 0;
-    list-style-type: none;
-    font-size: 14px;
-    line-height: 22px;
-}
-
-    div.entity-card > ul.attributes li {
-        margin-bottom: 7px;
-        word-wrap: break-word;
-    }
-
-    div.entity-card > ul.attributes li span.property {
-        font-weight: bold;
-        color: #202124;
-    }
-
-    div.entity-card > ul.attributes li span.property::after {
-        content: ":\00a0";
-    }
-
-div.entity-card > h4 {
-    height: 24px;
-    padding: 0;
-    margin-top: 24px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: normal;
-    font-family: 'Product Sans Regular', Arial, Helvetica, sans-serif;
-
-}
-
-div.entity-card > ul.image-cluster {
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    column-gap: 15px;
-}
-
-    div.entity-card > ul.image-cluster li {
-        flex-grow: 1;
-    }
-
-    div.entity-card > ul.image-cluster li a {
-        display: block;
-    }
-
-    div.entity-card > ul.image-cluster li img {
-        display: block;
-        max-height: 72px;
-        border-radius: 8px;
-    }
-
-    div.entity-card > ul.image-cluster li span {
-        margin-top: 3px;
-        font-size: 14px;
-        line-height: 18px;
-    }
 
 /* Answer card */
 
 div.answer-card {
     min-height: 170px;
-    padding-bottom: 25px;
+    padding: 25px 0 0 0;
     margin-bottom: 50px !important;
     position: relative;
     border-bottom: 1px solid #DADCE0;
@@ -233,8 +55,10 @@ div.answer-card > div.flex-container > div.left-container > ul.categories li:fir
 }
 
 div.answer-card > div.flex-container > div.left-container > span.answer {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 8px 0 0;
+    text-align: left;
     color: #202124;
 }
 
@@ -317,165 +141,3 @@ div.answer-card > ul.also {
         text-overflow: ellipsis;
     }
 
-/* Image vertical */
-
-div.image-vertical {
-    position: relative;
-    padding-bottom: 38px;
-    margin-bottom: 68px !important;
-    border-bottom: 1px solid #DADCE0;
-}
-
-    div.image-vertical > span.title {
-        margin-top: 10px;
-        display: inline-block;
-        font-size: 22px;
-        line-height: 28px;
-        height: 28px;
-        font-weight: normal;
-        font-family: 'Product Sans Regular', Arial, Helvetica, sans-serif;
-        color: #202124;
-    }
-
-    div.image-vertical > span.title a, div.image-vertical > span.title a:visited {
-        color: #202124;
-    }
-
-    div.image-vertical > span.title a:hover {
-        color: #1A0DAB;
-        text-decoration: none;
-    }
-
-    div.image-vertical > span.title i {
-        margin-right: 15px;
-    }
-    
-        div.image-vertical > span.title a:hover i {
-            color: #202124;
-        }
-    
-    div.image-vertical > span.feedback {
-        display: block;
-        position: absolute;
-        right: 15px;
-        margin-top: 8px;
-        font-size: 12px;
-        color: #70757A;
-        font-style: italic;
-    }
-
-        div.image-vertical > span.feedback a {
-            color: #70757A;
-        }
-
-        div.image-vertical > span.feedback a:hover {
-            color: #70757A;
-            text-decoration: none;
-        }
-    
-    div.image-vertical > span.left, div.image-vertical > span.right {
-        display: block;
-        position: absolute;
-        left: -20px;
-        top: 98px;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-    }
-
-        div.image-vertical > span.left a, div.image-vertical > span.right a {
-            display: block;
-            opacity: 0.9;
-            background: #FFF;
-            cursor: pointer;
-            border-radius: 50%;
-            transition-delay: 0s, 0s;
-            transition-duration: 0.5s, 0.5s;
-            transition-property: opacity, visibility;
-            transition-timing-function: ease, ease;
-            box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
-        }
-
-        div.image-vertical > span.left a:hover, div.image-vertical > span.right a:hover {
-            opacity: 1.0;
-        }
-
-        div.image-vertical > span.left a img, div.image-vertical > span.right a img {
-            position: relative;
-            top: 6px;
-            width: 24px;
-            height: 24px;
-        }
-
-        div.image-vertical > span.left {
-            display: none;
-        }
-
-        div.image-vertical > span.left a img {
-            transform: scaleX(-1);
-        }
-
-    div.image-vertical > span.right {
-        left: auto;
-        right: -20px;
-    }
-
-    div.image-vertical ul {
-        margin: 15px 0 0 0;
-        display: block;
-        padding: 0;
-        height: 130px;
-        overflow: hidden;
-        border-radius: 8px;
-        white-space: nowrap;
-        list-style-type: none;
-    }
-
-    div.image-vertical ul li {
-        display: inline-block;
-        width: auto;
-    }
-
-    div.image-vertical ul li img {
-        height: 130px;
-        max-width: 174px;
-        object-fit: cover;
-    }
-
-    div.image-vertical ul li.more {
-        position: relative;
-        width: 150px;
-        height: 100%;
-        text-align: center;
-    }
-
-    div.image-vertical ul li.more img {
-        display: inline-block;
-        width: 24px;
-        height: auto;
-        padding: 15px;
-        position: relative;
-        bottom: 17px;
-        border-radius: 50%;
-        border: 1px solid #DFE1E5;
-        background-color: #FFF;
-    }
-
-    div.image-vertical ul li.more span {
-        display: block;
-        position: relative;
-        bottom: 25px;
-        font-size: 14px;
-        line-height: 22px;
-        margin-top: 10px;
-        color: #202124;
-    }
-
-    div.image-vertical ul li.more a {
-        color: #202124;
-    }
-
-    div.image-vertical ul li.more a:hover {
-        color: #202124;
-    }
