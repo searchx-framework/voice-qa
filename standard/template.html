@@ -52,8 +52,8 @@
                                 <div class="flex-container">
                                     <div class="left-container">    
                                         <span class="answer">
-                                                What is Supplemental Security Income? It provides cash to meet basic needs for food, clothing, and shelter. 
-                                                Achieving a Better Life Experience (ABLE) – a spotlight on tax-advantaged savings accounts that an eligible individual can establish and use to pay for qualified disability-related expenses.
+
+                                                <button id="answer-button">Press for answer</button>
                                         </span>
                                         <!-- <span class="answer-supplementary">
                                                 <b>Check out the following martial arts disciplines that are easy to learn:</b>
@@ -91,6 +91,23 @@
                 window.location.href = './question.html'
             }
         </script>
+        <script>
+                ;
+                //   const input = document.getElementById('speech');
+                document.getElementById("answer-button").onclick = function ()
+                {
+                        event.preventDefault();
+                        const toSay = "What is Supplemental Security Income? It provides cash to meet basic needs for food, clothing, and shelter. Achieving a Better Life Experience (ABLE) – a spotlight on tax-advantaged savings accounts that an eligible individual can establish and use to pay for qualified disability-related expenses."
+                        const utterance = new SpeechSynthesisUtterance(toSay);
+                        
+                        // utterance properties
+                        utterance.pitch = 1.5;
+                        utterance.rate = 1;
+                        utterance.volume = 0.8;
+
+                        speechSynthesis.speak(utterance);
+                }
+              </script>
     </body>
 
 </html>
