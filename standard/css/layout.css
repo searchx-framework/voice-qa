@@ -140,6 +140,16 @@ header > div {
             line-height: 24px;
             list-style-type: none;
             color: #5F6368;
+            max-width: 400px;
+            text-align: right;
+        }
+        header > div ul.right > span.info-need {
+            display: inline-block;
+            font-size: 15px;
+            line-height: 17px;
+            width: auto;
+            word-wrap: break-word;
+            color: #FF0000;
         }
 
         header > div ul.right > li {
@@ -163,6 +173,25 @@ header > div {
         header > div ul.right > li a:hover {
             background-color: #EDEEEF;
             border-radius: 50%;
+        }
+
+        header > div ul.right > button {
+            padding: 3px 10px 3px 10px;
+            border-radius: 8px;
+            background: #EBEBEB;
+            color: #000;
+            font-family: 'Product Sans Regular', Arial, Helvetica, sans-serif;
+        }
+
+        header > div ul.right > button:hover {
+            background-color: #202123;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        header > div ul.right > button i {
+            margin-right: 5px;
+        }
         }
 
 main > div {

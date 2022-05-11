@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/fontawesome.min.css" />
+        <link rel="stylesheet" href="css/googlesans.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/landing.css" />
+        <title>Standard SERP Template</title>
+    </head>
+
+    
+        <header>
+            <div>
+                <img src="img/logo.svg" alt="Search" />
+                <!-- <form>
+                    <input type="text" name="querybox" value="query goes here" disabled />
+                    <button type="submit" disabled><i class="fas fa-search"></i></button>
+                </form> -->
+                <!-- <ul class="tabs">
+                   <li><a href="#" class="selected"><i class="fas fa-search"></i><span>All</span></a></li>
+                   <li><a href="#"><i class="fas fa-image"></i><span>Images</span></a></li>
+                   <li><a href="#"><i class="fas fa-newspaper"></i><span>News</span></a></li>
+                   <li><a href="#"><i class="fas fa-tag"></i><span>Shopping</span></a></li>
+                   <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li>
+                </ul> -->
+                <ul class="right">
+ 
+                </ul>
+            </div>
+        </header>
+
+        <main>
+                <div>
+                    <!-- <div class="stats">
+                        About 3,200,000,000 results (0.80 seconds)
+                    </div> -->
+    
+                    
+                    <div class="flex-container">
+                            <div class="left-container">
+                                <!-- Start right rail content -->
+        
+                                
+                                    <h3 class="padding">
+                                        Information Need
+                                    </h3>
+                                    <!-- <span class="subtitle padding">TV network</span> -->
+        
+                                    <div class="answer-card">
+                                            <div class="flex-container">
+                                                <div class="left-container">    
+                                                    <span class="answer">
+                                           
+                                                            You want to know what is supplemental security income used for.
+                                            </span>
+                                            </div>
+                                            </div>
+                                            </div>
+
+                                            <div class="relevance">
+                                                    <span> To what extent did the answer meet the information need?</span>
+                                                        <ul id="rel">
+                                                                <li style="inline-size: 120px; overflow-wrap: break-word;"> It did not answer the information need </li>
+                                                                <li><input type="radio" name="guilty" value="1" /></li>
+                                                                <li><input type="radio" name="guilty" value="2" /></li>
+                                                                <li><input type="radio" name="guilty" value="3" /></li>
+                                                                <li><input type="radio" name="guilty" value="4" /></li>
+                                                                <li><input type="radio" name="guilty" value="5" /></li>
+                                                                <li style="inline-size: 120px; overflow-wrap: break-word;"> It perfectly answered the information need </li>
+                                                        </ul>
+                                                </div>
+                    
+                                        <button type="button" id="myButton" disabled>
+                                                Next Scenario
+                                            </button>
+                                        <!-- <a href="#">Wikipedia</a> -->
+                                    </span>
+                                </div>
+        
+                    </div> 
+
+        <!-- Include script for scrolling functionality on necessary components -->
+        
+        <!-- <script type="text/javascript" src="js/web_scroll.js"></script> -->
+        <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
+         <!-- Include script for scrolling functionality on necessary components -->
+         <script type="text/javascript">
+            let currentPage = 'if_an_one';
+     </script>
+     <script type="text/javascript" src="js/check.js"></script>
+         <script type="text/javascript" src="js/logui.bundle.js"></script>
+
+         <!-- The config object, specific for the page you are loading -->
+         <script type="text/javascript" src="js/logui-listserp.js"></script>
+ 
+         <!-- The "Driving script" - that controls LogUI -->
+         <script type="text/javascript" src="js/logui-driver.js"></script>
+         <!-- <script type="text/javascript" src="js/web_scroll.js"></script> -->
+         <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
+         <script type="text/javascript">    
+                var form = document.getElementById('rel');
+                console.log("F",form)
+                if (form){
+                    form.addEventListener('change', function(e) {   
+                        document.getElementById('myButton').disabled = false; 
+                    })
+                }
+         </script>
+         <script type="text/javascript">
+             document.getElementById("myButton").onclick = function ()
+             {
+             var pages = JSON.parse(localStorage.getItem('pages'))
+             
+             if (pages.length == 0) {
+                let prolificID = sessionStorage.getItem("prolific-id");
+                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_8vrO8uhievU7IDc?prolificID=" + prolificID
+             } else {
+                 var mynum_index = Math.floor(Math.random() * pages.length); 
+                 // console.log("LOG", pages[mynum_index] + '/template.html')
+                 window.location.href = '/' + pages[mynum_index] + '/template.html'
+                 sessionStorage.setItem('task', pages[mynum_index])
+                 pages.splice(mynum_index , 1)
+                 localStorage.setItem('pages', JSON.stringify(pages))
+             }
+             LogUI.logCustomMessage({
+                     name: 'ANSWER_FROM_USER',
+                     metadata: {
+                         text: document.getElementById("answer").value,
+                         // status: playbackStatus,
+                     },
+                 });
+         }
+         </script>
+    
+    </body>
+
+</html>

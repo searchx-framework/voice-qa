@@ -11,7 +11,7 @@
         <title>Standard SERP Template</title>
     </head>
 
-    <body>
+    <body style="background: #f5f5f7;">
         <header>
             <div>
                 <img src="img/logo.svg" alt="Search" />
@@ -27,8 +27,13 @@
                    <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li> -->
                 </ul>
                 <ul class="right">
-                    <li><a href="#"><i class="fas fa-user"></i></a></li>
-                </ul>
+                        <button type="button" id="myButton">
+                            <i class="fa fa-arrow-right"></i>Answer
+                        </button>
+                        <span class="info-need">
+                            <p><i class="fa fa-info-circle"></i> You want to know what is supplemental security income used for.</p>
+                        </span>
+                    </ul>
             </div>
         </header>
 
@@ -65,19 +70,7 @@
                                 </div>
                                 <span class="feedback"><a href="#"></a></span>
                             </div>
-                            <div class="relevance">
-                                <span> To what extent did the answer meet the information need?</span>
-                                    <ul >
-                                            <li style="inline-size: 120px; overflow-wrap: break-word;"> It did not answer the information need </li>
-                                            <li><input type="radio" name="guilty" value="1" /></li>
-                                            <li><input type="radio" name="guilty" value="2" /></li>
-                                            <li><input type="radio" name="guilty" value="3" /></li>
-                                            <li><input type="radio" name="guilty" value="4" /></li>
-                                            <li><input type="radio" name="guilty" value="5" /></li>
-                                            <li style="inline-size: 120px; overflow-wrap: break-word;"> It perfectly answered the information need </li>
-                                    </ul>
-                            </div>
-
+                            
                         <!-- End right rail content -->
                     </div>
                     <div class="right-container">
@@ -89,6 +82,15 @@
 
         <!-- Include script for scrolling functionality on necessary components -->
         <script type="text/javascript" src="js/scroll.js"></script>
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function ()
+            {
+                
+                // var mynum_index = Math.floor(Math.random() * pages.length); 
+                // console.log("LOG", pages[mynum_index] + '/template.html')
+                window.location.href = './question.html'
+            }
+        </script>
     </body>
 
 </html>
