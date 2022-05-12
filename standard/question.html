@@ -54,7 +54,7 @@
                                     <div class="answer-card">
                                             <div class="flex-container">
                                                 <div class="left-container">    
-                                                    <span class="answer">
+                                                    <span class="answer" id="info">
                                            
                                                             You want to know what is supplemental security income used for.
                                             </span>
@@ -91,8 +91,10 @@
          <!-- Include script for scrolling functionality on necessary components -->
          <script type="text/javascript">
             let currentPage = 'if_an_one';
+            localStorage.setItem('current_page', 'question')
      </script>
-     <script type="text/javascript" src="js/check.js"></script>
+     <script type="text/javascript" src="js/queries.js"></script>
+        <script type="text/javascript" src="js/check.js"></script>
          <script type="text/javascript" src="js/logui.bundle.js"></script>
 
          <!-- The config object, specific for the page you are loading -->
@@ -114,18 +116,15 @@
          <script type="text/javascript">
              document.getElementById("myButton").onclick = function ()
              {
-             var pages = JSON.parse(localStorage.getItem('pages'))
-             
+             var pages = JSON.parse(sessionStorage.getItem('pages'))
+             console.log("FINISH", pages)
              if (pages.length == 0) {
-                let prolificID = sessionStorage.getItem("prolific-id");
-                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_8vrO8uhievU7IDc?prolificID=" + prolificID
+                 window.location.href = "finish.html"
+                // let prolificID = sessionStorage.getItem("prolific-id");
+                //  window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_8vrO8uhievU7IDc?prolificID=" + prolificID
              } else {
-                 var mynum_index = Math.floor(Math.random() * pages.length); 
                  // console.log("LOG", pages[mynum_index] + '/template.html')
-                 window.location.href = '/' + pages[mynum_index] + '/template.html'
-                 sessionStorage.setItem('task', pages[mynum_index])
-                 pages.splice(mynum_index , 1)
-                 localStorage.setItem('pages', JSON.stringify(pages))
+                 window.location.href = 'template.html'
              }
              LogUI.logCustomMessage({
                      name: 'ANSWER_FROM_USER',

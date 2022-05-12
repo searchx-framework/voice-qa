@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/fontawesome.min.css" />
+        <link rel="stylesheet" href="css/googlesans.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/landing.css" />
+        <title>Search Experiment</title>
+    </head>
+
+    <body style="background: #f5f5f7;">
+        <header>
+            <div>
+                <img src="img/logo.svg" alt="Search" />
+                <!-- <form>
+                    <input type="text" name="querybox" value="query goes here" disabled />
+                    <button type="submit" disabled><i class="fas fa-search"></i></button>
+                </form> -->
+                <!-- <ul class="tabs">
+                   <li><a href="#" class="selected"><i class="fas fa-search"></i><span>All</span></a></li>
+                   <li><a href="#"><i class="fas fa-image"></i><span>Images</span></a></li>
+                   <li><a href="#"><i class="fas fa-newspaper"></i><span>News</span></a></li>
+                   <li><a href="#"><i class="fas fa-tag"></i><span>Shopping</span></a></li>
+                   <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li>
+                </ul> -->
+                <ul class="right">
+ 
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <!-- <div class="stats">
+                    About 3,200,000,000 results (0.80 seconds)
+                </div> -->
+                <div class="grid-container">
+                        <div>
+                                <h2 class="check-list">End of study!</h2>
+                                
+                        </div>
+                        </div>
+
+                    </div> 
+                </main>
+        <!-- Include script for scrolling functionality on necessary components -->
+        <script type="text/javascript">
+            let currentPage="landing"
+        </script>
+        <script type="text/javascript" src="js/check.js"></script>
+        <script type="text/javascript" src="js/logui.bundle.js"></script>
+
+         <!-- The config object, specific for the page you are loading -->
+         <script type="text/javascript" src="js/logui-listserp.js"></script>
+ 
+         <!-- The "Driving script" - that controls LogUI -->
+         <script type="text/javascript" src="js/logui-driver.js"></script>
+        <!-- <script type="text/javascript" src="js/web_scroll.js"></script> -->
+        <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
+        <script type="text/javascript">
+        // window.location.href = 'template.html';
+            // document.getElementById("myButton").onclick   = function() {
+
+                // return false;
+                LogUI.logCustomMessage({
+                     name: 'SESSION_START',
+                     metadata: {
+                         user: form.prolificID.value,
+                         // status: playbackStatus,
+                     },
+                 });
+            
+        </script>
