@@ -16,7 +16,7 @@
             <div>
                 <img src="img/logo.svg" alt="Search" />
                 <form>
-                    <input type="text" name="querybox" value="what is supplemental security income used for" disabled />
+                    <input type="text" name="querybox" id="query" disabled />
                     <button type="submit" disabled><i class="fas fa-search"></i></button>
                 </form>
                 <ul class="tabs">
@@ -31,7 +31,7 @@
                             <i class="fa fa-arrow-right"></i>Answer
                         </button>
                         <span class="info-need">
-                            <p><i class="fa fa-info-circle"></i> You want to know what is supplemental security income used for.</p>
+                            <p id='info' ><i class="fa fa-info-circle"></i> </p>
                         </span>
                     </ul>
             </div>
@@ -81,8 +81,9 @@
         </main>
 
         <!-- Include script for scrolling functionality on necessary components -->
-
+        <script type="text/javascript" src="js/queries.js"></script>
         <script type="text/javascript">
+            sessionStorage.setItem('current_page', 'template')
             document.getElementById("myButton").onclick = function ()
             {
                 
@@ -97,7 +98,11 @@
                 document.getElementById("answer-button").onclick = function ()
                 {
                         event.preventDefault();
-                        const toSay = "What is Supplemental Security Income? It provides cash to meet basic needs for food, clothing, and shelter. Achieving a Better Life Experience (ABLE) – a spotlight on tax-advantaged savings accounts that an eligible individual can establish and use to pay for qualified disability-related expenses."
+                        let item = JSON.parse(sessionStorage.getItem("task"))
+                        console.log(item)
+                        const a = Math.round(Math.random())
+                        const toSay = item.answer[a]
+                        
                         const utterance = new SpeechSynthesisUtterance(toSay);
                         
                         // utterance properties
