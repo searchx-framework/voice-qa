@@ -106,6 +106,7 @@
          <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
          <script type="text/javascript">    
                 var form = document.getElementById('rel');
+                
                 console.log("F",form)
                 if (form){
                     form.addEventListener('change', function(e) {   
@@ -117,7 +118,7 @@
              document.getElementById("myButton").onclick = function ()
              {
              var pages = JSON.parse(sessionStorage.getItem('pages'))
-             console.log("FINISH", pages)
+             localStorage.setItem('first-visit', 0) 
              if (pages.length == 0) {
                  window.location.href = "finish.html"
                 // let prolificID = sessionStorage.getItem("prolific-id");
