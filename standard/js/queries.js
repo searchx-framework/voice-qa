@@ -25,10 +25,26 @@ var tasks = [
 document.addEventListener("DOMContentLoaded", function(){
     let querybox, answer, need, item, a;
     let fv = localStorage.getItem('first-visit')
-    // console.log("FV", typeof(fv))
-    if( fv == 1) {
+    let qv = localStorage.getItem('ques-visit')
+    let currenTask;
+    let cp = localStorage.getItem('current_page');
+    let viewedList = window.sessionStorage.getItem('viewedList');
+    viewedList = JSON.parse(viewedList);
+    
+    // if (viewedList.includes(current_task)) {
+        
+    // }
+    if(qv == 0 && cp == "question"){
+            
+        item = JSON.parse(sessionStorage.getItem('task'))
+        need = document.getElementById('info');
+        need.textContent = item.info
+        localStorage.setItem('ques-visit', 1) 
+        // console.log("q", need)
+    } else if( fv == 1 && cp != "question") {
         // cookie doesn't exist, create it now
-        console.log("refresh")
+        // console.log("refresh")
+    
         querybox = document.getElementById('query');
         answer = document.getElementById('answer');
         need = document.getElementById('info');
@@ -36,21 +52,20 @@ document.addEventListener("DOMContentLoaded", function(){
         querybox.value = item.query
         need.textContent = item.info
         let a = sessionStorage.getItem('answer')
-        answer.textContent = item.answer[parseInt(a)] 
-        
+        answer.textContent = item.answer[parseInt(a)]    
+    } else if ( qv == 1 && cp == "question" && fv ==1) {
+        localStorage.setItem('ques-visit', 0) 
+        window.location.href = './question.html'
     } else {
-        console.log("first")
-        localStorage.setItem('first-visit', 1) 
+        // console.log("first")
+        localStorage.setItem('current_page', 'template')
         let pages = JSON.parse(sessionStorage.getItem('pages'))
-    
-        let cp = localStorage.getItem('current_page');
-        if(cp == "question"){
-            
-            item = JSON.parse(sessionStorage.getItem('task'))
-            need = document.getElementById('info');
-            need.textContent = item.info
-        }
-        else {
+        
+        
+       
+        
+            localStorage.setItem('first-visit', 1)
+            localStorage.setItem('ques-visit', 0) 
             var mynum_index = Math.floor(Math.random() * pages.length); 
             item = tasks[pages[mynum_index]];
     
@@ -62,8 +77,11 @@ document.addEventListener("DOMContentLoaded", function(){
             answer = document.getElementById('answer');
             need = document.getElementById('info');
             console.log(info)
-        
+            currenTask = item.id;
+            if (viewedList){viewedList.push(currenTask)}
+            else {viewedList=[currenTask]}
             
+            sessionStorage.setItem('viewedList', JSON.stringify(viewedList));
             
         
             querybox.value = item.query
@@ -75,8 +93,11 @@ document.addEventListener("DOMContentLoaded", function(){
             pages.splice(mynum_index , 1)
             
             sessionStorage.setItem('pages', JSON.stringify(pages))
-        }
+            
+            
+        
     }
+
     
 
     
