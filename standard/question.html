@@ -117,6 +117,7 @@
              document.getElementById("myButton").onclick = function ()
              {
              var pages = JSON.parse(sessionStorage.getItem('pages'))
+             localStorage.setItem('first-visit', 0);
              console.log("FINISH", pages)
              if (pages.length == 0) {
                  window.location.href = "finish.html"

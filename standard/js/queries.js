@@ -22,41 +22,56 @@ var tasks = [
 ]
 
 document.addEventListener("DOMContentLoaded", function(){
-
-    let pages = JSON.parse(sessionStorage.getItem('pages'))
-    
-    let cp = sessionStorage.getItem('current_page');
-    
-    if(cp == "question"){
+    let querybox, answer, need, item, a;
+    let fv = localStorage.getItem('first-visit')
+    // console.log("FV", typeof(fv))
+    if( fv == 1) {
+        console.log("refresh")
+        querybox = document.getElementById('query');
+        
+        need = document.getElementById('info');
         let item = JSON.parse(sessionStorage.getItem('task'))
-        let need = document.getElementById('info');
-        need.textContent = item.info
-    }
-    else {
-        var mynum_index = Math.floor(Math.random() * pages.length); 
-
-        sessionStorage.setItem('task', JSON.stringify(tasks[pages[mynum_index]]))
-    
-    
-    
-        let querybox = document.getElementById('query');
-        // let answer = document.getElementById('answer');
-        let need = document.getElementById('info');
-        
-    
-        var item = tasks[pages[mynum_index]];
-        
-        
         querybox.value = item.query
         need.textContent = item.info
-        // const a = Math.round(Math.random())
-        // answer.textContent = item.answer[a]
-    
-        pages.splice(mynum_index , 1)
-        
-        sessionStorage.setItem('pages', JSON.stringify(pages))
-    }
 
+        
+    } else {
+        localStorage.setItem('first-visit',1)
+        let pages = JSON.parse(sessionStorage.getItem('pages'))
+        
+        let cp = sessionStorage.getItem('current_page');
+        
+        if(cp == "question"){
+            let item = JSON.parse(sessionStorage.getItem('task'))
+            let need = document.getElementById('info');
+            need.textContent = item.info
+        }
+        else {
+            var mynum_index = Math.floor(Math.random() * pages.length); 
+            item = tasks[pages[mynum_index]];
+
+            sessionStorage.setItem('task', JSON.stringify(item))
+        
+        
+        
+            querybox = document.getElementById('query');
+            // let answer = document.getElementById('answer');
+            need = document.getElementById('info');
+            
+        
+            
+            
+            
+            querybox.value = item.query
+            need.textContent = item.info
+            // const a = Math.round(Math.random())
+            // answer.textContent = item.answer[a]
+        
+            pages.splice(mynum_index , 1)
+            
+            sessionStorage.setItem('pages', JSON.stringify(pages))
+        }
+    }
 
     // console.log("Test", querybox.value, answer) 
 

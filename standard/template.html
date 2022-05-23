@@ -86,22 +86,34 @@
             sessionStorage.setItem('current_page', 'template')
             document.getElementById("myButton").onclick = function ()
             {
-                
+                localStorage.setItem('first-visit', 0);
                 // var mynum_index = Math.floor(Math.random() * pages.length); 
                 // console.log("LOG", pages[mynum_index] + '/template.html')
                 window.location.href = './question.html'
             }
         </script>
         <script>
-                ;
+                
                 //   const input = document.getElementById('speech');
                 document.getElementById("answer-button").onclick = function ()
                 {
-                        event.preventDefault();
-                        let item = JSON.parse(sessionStorage.getItem("task"))
-                        console.log(item)
+                    let fv = localStorage.getItem('first-visit');
+                    let item = JSON.parse(sessionStorage.getItem("task"))
+                    let toSay;
+                    event.preventDefault();
+                    if( fv == 1) {
+                        let a = sessionStorage.getItem('answer')
+                        toSay = item.answer[parseInt(a)] 
+                    } else { 
+                        
+                        
+                        // console.log(item)
                         const a = Math.round(Math.random())
-                        const toSay = item.answer[a]
+                        sessionStorage.setItem('answer', a)
+                        toSay = item.answer[a]
+                    }
+
+                        
                         
                         const utterance = new SpeechSynthesisUtterance(toSay);
                         
