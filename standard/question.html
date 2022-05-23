@@ -89,8 +89,8 @@
          <!-- Include script for scrolling functionality on necessary components -->
          <script type="text/javascript">
             
-            localStorage.setItem('current_page', 'question')
-            // localStorage.setItem('first-visit', 1) 
+            sessionStorage.setItem('current_page', 'question')
+            // sessionStorage.setItem('first-visit', 1) 
      </script>
      <script type="text/javascript" src="js/queries.js"></script>
         <script type="text/javascript" src="js/check.js"></script>
@@ -117,7 +117,7 @@
              document.getElementById("myButton").onclick = function ()
              {
              var pages = JSON.parse(sessionStorage.getItem('pages'))
-             localStorage.setItem('first-visit', 0) 
+             sessionStorage.setItem('first-visit', 0) 
              if (pages.length == 0) {
                  window.location.href = "finish.html"
                 // let prolificID = sessionStorage.getItem("prolific-id");

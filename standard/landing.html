@@ -58,8 +58,8 @@
         <!-- Include script for scrolling functionality on necessary components -->
         <script type="text/javascript">
             let currentPage="landing"
-            localStorage.setItem('first-visit', 0) 
-            localStorage.setItem('current_page', 'landing')
+            sessionStorage.setItem('first-visit', 0) 
+            sessionStorage.setItem('current_page', 'landing')
         </script>
         <script type="text/javascript" src="js/check.js"></script>
         <script type="text/javascript" src="js/logui.bundle.js"></script>
@@ -79,8 +79,8 @@
                 sessionStorage.setItem('pages', JSON.stringify(pages))
                 // sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')
-                // var pages = JSON.parse(localStorage.getItem('pages'))
-            // // var pages = JSON.parse(localStorage.getItem('pages'))
+                // var pages = JSON.parse(sessionStorage.getItem('pages'))
+            // // var pages = JSON.parse(sessionStorage.getItem('pages'))
             // var myarray = new Array('template1.html','template2.html','template3.html', 'template4.html');
                 // var p = pages[mynum_index]
                 form.action  = 'template.html'
