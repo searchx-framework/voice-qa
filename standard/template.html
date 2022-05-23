@@ -50,10 +50,15 @@
                         <!-- Start left rail content -->
                         <div class="answer-card">
                                 <div class="flex-container">
-                                    <div class="left-container">    
+                                    <div class="left-container"> 
+                                        <h3> Press for answer </h3>   
                                         <span class="answer">
-
-                                                <button id="answer-button">Press for answer</button>
+                                                
+                                                <audio controls id="audio1">
+                                                        <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                                                        <source id="answer" type="audio/mpeg">
+                                                      
+                                                      </audio>
                                         </span>
                                         <!-- <span class="answer-supplementary">
                                                 <b>Check out the following martial arts disciplines that are easy to learn:</b>
@@ -83,21 +88,21 @@
         <!-- Include script for scrolling functionality on necessary components -->
         <script type="text/javascript" src="js/queries.js"></script>
         <script type="text/javascript">
-            sessionStorage.setItem('current_page', 'template')
+            // sessionStorage.setItem('current_page', 'template')
             document.getElementById("myButton").onclick = function ()
             {
-                localStorage.setItem('first-visit', 0);
+                sessionStorage.setItem('ques-visit', 0) 
                 // var mynum_index = Math.floor(Math.random() * pages.length); 
                 // console.log("LOG", pages[mynum_index] + '/template.html')
                 window.location.href = './question.html'
             }
         </script>
-        <script>
+        <!-- <script>
                 
                 //   const input = document.getElementById('speech');
                 document.getElementById("answer-button").onclick = function ()
                 {
-                    let fv = localStorage.getItem('first-visit');
+                    let fv = sessionStorage.getItem('first-visit');
                     let item = JSON.parse(sessionStorage.getItem("task"))
                     let toSay;
                     event.preventDefault();
@@ -124,7 +129,7 @@
 
                         speechSynthesis.speak(utterance);
                 }
-              </script>
+              </script> -->
     </body>
 
 </html>

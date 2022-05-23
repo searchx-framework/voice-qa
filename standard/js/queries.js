@@ -23,30 +23,50 @@ var tasks = [
 
 document.addEventListener("DOMContentLoaded", function(){
     let querybox, answer, need, item, a;
-    let fv = localStorage.getItem('first-visit')
+    let fv = sessionStorage.getItem('first-visit')
+    let qv = sessionStorage.getItem('ques-visit')
+    let currenTask;
+    let cp = sessionStorage.getItem('current_page');
+    let viewedList = window.sessionStorage.getItem('viewedList');
+    viewedList = JSON.parse(viewedList);
     // console.log("FV", typeof(fv))
-    if( fv == 1) {
-        console.log("refresh")
+
+
+    if(qv == 0 && cp == "question"){
+            
+        item = JSON.parse(sessionStorage.getItem('task'))
+        need = document.getElementById('info');
+        need.textContent = item.info
+        sessionStorage.setItem('ques-visit', 1) 
+        // console.log("q", need)
+    } else if( fv == 1 && cp != "question") {
+        // console.log("refresh")
         querybox = document.getElementById('query');
-        
+        answer = document.getElementById('answer')
         need = document.getElementById('info');
         let item = JSON.parse(sessionStorage.getItem('task'))
         querybox.value = item.query
-        need.textContent = item.info
+        need.textContent = item.info  
 
+        let a = sessionStorage.getItem('answer')
+        var audio1= document.getElementById("audio1")
+        console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
+        answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
+        audio1.load();
         
+        // answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
+
+    }  else if ( qv == 1 && cp == "question" && fv ==1) {
+        sessionStorage.setItem('ques-visit', 0) 
+        window.location.href = './question.html'
     } else {
-        localStorage.setItem('first-visit',1)
+        sessionStorage.setItem('current_page', 'template')
         let pages = JSON.parse(sessionStorage.getItem('pages'))
+        sessionStorage.setItem('first-visit', 1)
+        sessionStorage.setItem('ques-visit', 0) 
+        // let cp = sessionStorage.getItem('current_page');
         
-        let cp = sessionStorage.getItem('current_page');
-        
-        if(cp == "question"){
-            let item = JSON.parse(sessionStorage.getItem('task'))
-            let need = document.getElementById('info');
-            need.textContent = item.info
-        }
-        else {
+
             var mynum_index = Math.floor(Math.random() * pages.length); 
             item = tasks[pages[mynum_index]];
 
@@ -57,20 +77,25 @@ document.addEventListener("DOMContentLoaded", function(){
             querybox = document.getElementById('query');
             // let answer = document.getElementById('answer');
             need = document.getElementById('info');
-            
+            answer = document.getElementById('answer')
         
             
             
             
             querybox.value = item.query
             need.textContent = item.info
-            // const a = Math.round(Math.random())
-            // answer.textContent = item.answer[a]
+            a = Math.round(Math.random())
+            sessionStorage.setItem('answer', a)
+            var audio1= document.getElementById("audio1")
+            console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
+            answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
+            audio1.load();
+            
         
             pages.splice(mynum_index , 1)
             
             sessionStorage.setItem('pages', JSON.stringify(pages))
-        }
+        
     }
 
     // console.log("Test", querybox.value, answer) 

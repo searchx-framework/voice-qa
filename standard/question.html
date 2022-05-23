@@ -56,7 +56,7 @@
                                                 <div class="left-container">    
                                                     <span class="answer" id="info">
                                            
-                                                            You want to know what is supplemental security income used for.
+                                                            
                                             </span>
                                             </div>
                                             </div>
@@ -90,7 +90,7 @@
         <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
          <!-- Include script for scrolling functionality on necessary components -->
          <script type="text/javascript">
-            let currentPage = 'if_an_one';
+            
             sessionStorage.setItem('current_page', 'question')
      </script>
      <script type="text/javascript" src="js/queries.js"></script>
@@ -117,7 +117,7 @@
              document.getElementById("myButton").onclick = function ()
              {
              var pages = JSON.parse(sessionStorage.getItem('pages'))
-             localStorage.setItem('first-visit', 0);
+             sessionStorage.setItem('first-visit', 0);
              console.log("FINISH", pages)
              if (pages.length == 0) {
                  window.location.href = "finish.html"
