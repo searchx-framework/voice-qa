@@ -47,7 +47,7 @@
         
                                 
                                     <h3 class="padding">
-                                        Information Need
+                                        The query/information you were looking out for: 
                                     </h3>
                                     <!-- <span class="subtitle padding">TV network</span> -->
         
@@ -55,31 +55,51 @@
                                             <div class="flex-container">
                                                 <div class="left-container">    
                                                     <span class="answer" id="info">
-                                           
-                                                            
                                             </span>
                                             </div>
                                             </div>
                                             </div>
-
+                                            
+                                            
                                             <div class="relevance">
-                                                    <span> To what extent did the answer meet the information need?</span>
+                                                    <span> To what extent was the passage relevant to the query? (think if the passage answered the query)</span>
                                                         <ul id="rel">
-                                                                <li style="inline-size: 120px; overflow-wrap: break-word;"> It did not answer the information need </li>
-                                                                <li><input type="radio" name="guilty" value="1" /></li>
-                                                                <li><input type="radio" name="guilty" value="2" /></li>
-                                                                <li><input type="radio" name="guilty" value="3" /></li>
-                                                                <li><input type="radio" name="guilty" value="4" /></li>
-                                                                <li><input type="radio" name="guilty" value="5" /></li>
-                                                                <li style="inline-size: 120px; overflow-wrap: break-word;"> It perfectly answered the information need </li>
+                                                                <li style="inline-size: 120px; overflow-wrap: break-word;"> Not relevant at all</li>
+                                                                <li><input type="radio" name="rel" value="1" /></li>
+                                                                <li><input type="radio" name="rel" value="2" /></li>
+                                                                <li><input type="radio" name="rel" value="3" /></li>
+                                                                <li><input type="radio" name="rel" value="4" /></li>
+                                                                <li><input type="radio" name="rel" value="5" /></li>
+                                                                <li style="inline-size: 120px; overflow-wrap: break-word;"> Perfectly relevant </li>
                                                         </ul>
                                                 </div>
                     
-                                        <button type="button" id="myButton" disabled>
-                                                Next Scenario
-                                            </button>
+                                        
                                         <!-- <a href="#">Wikipedia</a> -->
-                                    </span>
+                                    
+                                    
+                                    <div class="confidence">
+                                    <span> How confident are you that you will be able to recall the passage?</span>
+                                    <ul id="con">
+                                            <li style="inline-size: 120px; overflow-wrap: break-word;"> Not confident</li>
+                                            <li><input type="radio" name="con" value="1" /></li>
+                                            <li><input type="radio" name="con" value="2" /></li>
+                                            <li><input type="radio" name="con" value="3" /></li>
+                                            <li><input type="radio" name="con" value="4" /></li>
+                                            <li><input type="radio" name="con" value="5" /></li>
+                                            <li style="inline-size: 120px; overflow-wrap: break-word;"> Very confident </li>
+                                    </ul>
+                                    <button type="button" id="myButton" disabled>
+                                            Next Query
+                                        </button>
+                            </div>
+                            
+
+                    
+                    <!-- <a href="#">Wikipedia</a> -->
+                
+                                    
+                                    
                                 </div>
         
                     </div> 
@@ -92,6 +112,7 @@
          <script type="text/javascript">
             
             sessionStorage.setItem('current_page', 'question')
+            // sessionStorage.setItem('first-visit', 1) 
      </script>
      <script type="text/javascript" src="js/queries.js"></script>
         <script type="text/javascript" src="js/check.js"></script>
@@ -106,23 +127,40 @@
          <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
          <script type="text/javascript">    
                 var form = document.getElementById('rel');
-                console.log("F",form)
-                if (form){
+                var form2 = document.getElementById('con');
+                var fc = 1;
+                var fc2 = 1;
+                
+                if (form && form2){
+                    
                     form.addEventListener('change', function(e) {   
-                        document.getElementById('myButton').disabled = false; 
+                        fc = fc + 1;
+                        if (fc >=2 && fc2 >=2){
+                            document.getElementById('myButton').disabled = false; 
+                        }
+                        
+                    })
+                    form2.addEventListener('change', function(e) {   
+                        fc2 = fc2 + 1;
+                        
+                        if (fc >=2 && fc2 >=2){
+                            
+                            document.getElementById('myButton').disabled = false; 
+                        }
+                        
                     })
                 }
+     
          </script>
          <script type="text/javascript">
              document.getElementById("myButton").onclick = function ()
              {
              var pages = JSON.parse(sessionStorage.getItem('pages'))
-             sessionStorage.setItem('first-visit', 0);
-             console.log("FINISH", pages)
+             sessionStorage.setItem('first-visit', 0) 
              if (pages.length == 0) {
-                 window.location.href = "finish.html"
+                //  window.location.href = "finish.html"
                 // let prolificID = sessionStorage.getItem("prolific-id");
-                //  window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_8vrO8uhievU7IDc?prolificID=" + prolificID
+                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq"
              } else {
                  // console.log("LOG", pages[mynum_index] + '/template.html')
                  window.location.href = 'template.html'

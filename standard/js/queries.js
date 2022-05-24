@@ -18,6 +18,20 @@ var tasks = [
         answer: [ "Mechanical ventilation is the medical term for artificial ventilation where mechanical means is used to assist or replace spontaneous breathing.",
         "Physiology Explains CPAP’s Effectiveness. Non-invasive pressure-support ventilation (NIPSV), a method of assisting a patient’s respiration without intubation, was first reported in the 18th century."],
         info: "You want to understand the definition of mechanical ventilation according to medicare"
+    },
+    {
+        id: "und_short_2",
+        query: "define visceral?",
+        answer: [ "Definition of visceral for English Language Learners. : 1  coming from strong emotions and not from logic or reason. 2  medical : of or relating to the viscera.",
+        "A viscero-visceral reflex is a reflex in which stimulation of visceral receptors results in activation of visceral motor phenomena"],
+        info: "You want to understand the definition of visceral in english language"
+    },
+    {
+        id: "und_short_3",
+        query: "lps laws definition",
+        answer: [ "The Lanterman–Petris–Short (LPS) Act concerns the involuntary civil commitment to a mental health institution in the State of California. The act set the precedent for modern mental health commitment procedures in the United States.",
+        "When a patient has a serious psychiatric disorder or mental health problem, he may be admitted to a mental hospital, also referred to as a psychiatric facility, for evaluation and treatment."],
+        info: "You want to understand the definition of LPS laws"
     }
 ]
 
@@ -43,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function(){
         // console.log("refresh")
         querybox = document.getElementById('query');
         answer = document.getElementById('answer')
-        need = document.getElementById('info');
+        // need = document.getElementById('info');
         let item = JSON.parse(sessionStorage.getItem('task'))
         querybox.value = item.query
-        need.textContent = item.info  
+        // need.textContent = item.info  
 
         let a = sessionStorage.getItem('answer')
         var audio1= document.getElementById("audio1")
@@ -76,18 +90,18 @@ document.addEventListener("DOMContentLoaded", function(){
         
             querybox = document.getElementById('query');
             // let answer = document.getElementById('answer');
-            need = document.getElementById('info');
+            // need = document.getElementById('info');
             answer = document.getElementById('answer')
         
             
             
             
             querybox.value = item.query
-            need.textContent = item.info
+            // need.textContent = item.info
             a = Math.round(Math.random())
             sessionStorage.setItem('answer', a)
             var audio1= document.getElementById("audio1")
-            console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
+            // console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
             answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
             audio1.load();
             
