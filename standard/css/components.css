@@ -1,4 +1,10 @@
 /* Organic Result (including subresults, which are indented) */
+div.relevance{
+    height: 100px
+}
+div.confidence{
+    position: absolute;
+}
 
 div.relevance ul li {
     float: left;
@@ -8,6 +14,15 @@ div.relevance ul li {
     font-size: 14px;
     color: #202124; */
 }
+div.confidence ul li {
+    float: left;
+    list-style-type: none;
+    padding: 10px;
+    /* display: block;
+    font-size: 14px;
+    color: #202124; */
+}
+
 
     
 /* Box Element Container */
@@ -22,7 +37,8 @@ div.box-container {
 
 div.answer-card {
     /* min-height: 170px; */
-    padding: 25px 0 0 0;
+    padding: 0 0 20px;
+    margin-top: 12px;
     margin-bottom: 50px !important;
     position: relative;
     border-bottom: 1px solid #DADCE0;

@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function(){
     
         querybox = document.getElementById('query');
         answer = document.getElementById('answer');
-        need = document.getElementById('info');
+        // need = document.getElementById('info');
         let item = JSON.parse(sessionStorage.getItem('task'))
         querybox.value = item.query
-        need.textContent = item.info
+        // need.textContent = item.info
         let a = sessionStorage.getItem('answer')
         answer.textContent = item.answer[parseInt(a)]    
     } else if ( qv == 1 && cp == "question" && fv ==1) {
@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function(){
         
             querybox = document.getElementById('query');
             answer = document.getElementById('answer');
-            need = document.getElementById('info');
-            console.log(info)
+            // need = document.getElementById('info');
+            // console.log(info)
             currenTask = item.id;
             if (viewedList){viewedList.push(currenTask)}
             else {viewedList=[currenTask]}
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
         
             querybox.value = item.query
-            need.textContent = item.info
+            // need.textContent = item.info
             a = Math.round(Math.random())
             sessionStorage.setItem('answer', a)
             answer.textContent = item.answer[a]
