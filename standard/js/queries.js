@@ -48,14 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // if (viewedList.includes(current_task)) {
         
     // }
-    if(qv == 0 && cp == "question"){
-            
-        item = JSON.parse(sessionStorage.getItem('task'))
-        need = document.getElementById('info');
-        need.textContent = item.info
-        sessionStorage.setItem('ques-visit', 1) 
-        // console.log("q", need)
-    } else if( fv == 1 && cp != "question") {
+    if( fv == 1) {
         // cookie doesn't exist, create it now
         // console.log("refresh")
     
@@ -67,9 +60,6 @@ document.addEventListener("DOMContentLoaded", function(){
         // need.textContent = item.info
         let a = sessionStorage.getItem('answer')
         answer.textContent = item.answer[parseInt(a)]    
-    } else if ( qv == 1 && cp == "question" && fv ==1) {
-        sessionStorage.setItem('ques-visit', 0) 
-        window.location.href = './question.html'
     } else {
         // console.log("first")
         sessionStorage.setItem('current_page', 'template')
@@ -77,38 +67,38 @@ document.addEventListener("DOMContentLoaded", function(){
         
         
        
-        
-            sessionStorage.setItem('first-visit', 1)
-            sessionStorage.setItem('ques-visit', 0) 
-            var mynum_index = Math.floor(Math.random() * pages.length); 
-            item = tasks[pages[mynum_index]];
     
-            sessionStorage.setItem('task', JSON.stringify(item))
+        sessionStorage.setItem('first-visit', 1)
+        sessionStorage.setItem('ques-visit', 0) 
+        var mynum_index = Math.floor(Math.random() * pages.length); 
+        item = tasks[pages[mynum_index]];
+
+        sessionStorage.setItem('task', JSON.stringify(item))
+    
+    
+    
+        querybox = document.getElementById('query');
+        answer = document.getElementById('answer');
+        // need = document.getElementById('info');
+        // console.log(info)
+        currenTask = item.id;
+        if (viewedList){viewedList.push(currenTask)}
+        else {viewedList=[currenTask]}
+        
+        sessionStorage.setItem('viewedList', JSON.stringify(viewedList));
+        
+    
+        querybox.value = item.query
+        // need.textContent = item.info
+        a = Math.round(Math.random())
+        sessionStorage.setItem('answer', a)
+        answer.textContent = item.answer[a]
+    
+        pages.splice(mynum_index , 1)
+        
+        sessionStorage.setItem('pages', JSON.stringify(pages))
         
         
-        
-            querybox = document.getElementById('query');
-            answer = document.getElementById('answer');
-            // need = document.getElementById('info');
-            // console.log(info)
-            currenTask = item.id;
-            if (viewedList){viewedList.push(currenTask)}
-            else {viewedList=[currenTask]}
-            
-            sessionStorage.setItem('viewedList', JSON.stringify(viewedList));
-            
-        
-            querybox.value = item.query
-            // need.textContent = item.info
-            a = Math.round(Math.random())
-            sessionStorage.setItem('answer', a)
-            answer.textContent = item.answer[a]
-        
-            pages.splice(mynum_index , 1)
-            
-            sessionStorage.setItem('pages', JSON.stringify(pages))
-            
-            
         
     }
 

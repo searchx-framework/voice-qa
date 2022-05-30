@@ -2,8 +2,16 @@
 div.relevance{
     height: 100px
 }
-div.confidence{
+/* div.confidence{
     position: absolute;
+} */
+div.relevance div {
+    /* float: left; */
+    list-style-type: none;
+    padding: 5px;
+    /* display: block;
+    font-size: 14px;
+    color: #202124; */
 }
 
 div.relevance ul li {
@@ -39,7 +47,7 @@ div.answer-card {
     /* min-height: 170px; */
     padding: 0 0 20px;
     margin-top: 12px;
-    margin-bottom: 50px !important;
+    /* margin-bottom: 50px !important; */
     position: relative;
     border-bottom: 1px solid #DADCE0;
 }

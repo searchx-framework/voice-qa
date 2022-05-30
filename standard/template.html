@@ -27,9 +27,9 @@
                    <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li> -->
                 </ul>
                 <ul class="right">
-                        <button type="button" id="myButton">
+                        <!-- <button type="button" id="myButton">
                             <i class="fa fa-arrow-right"></i>Mark Relevance
-                        </button>
+                        </button> -->
                         <span class="info-need">
                             <!-- <p id='info'><i class="fa fa-info-circle"></i> You want to know what is supplemental security income used for.</p> -->
                         </span>
@@ -69,12 +69,52 @@
                                 </div>
                                 <span class="feedback"><a href="#"></a></span>
                             </div>
-                            <div class="speech-bubble"> 
+                            <!-- <div class="speech-bubble"> 
                                     <p class="question"> <i class="fas fa-search" style="margin-right: 20px;"></i> Who formed the commonwealth of independent states?</p>
                                 </div>
                             <div class="speech-bubble"> 
                                 <p class="answer"> 'Commonwealth of Independent States; putative successor to the USSR, except that the Baltic Republics of Estonia, Latvia, and Lithuania never joined.</p>
-                            </div>
+                            </div> -->
+                            <div class="relevance" id="rel">
+                                    <span> To what extent was the answer <b>relevant</b> to the query? </span>
+                                    <div style="margin-top: 10px;">
+                                        <input type="radio" id="0" name="rel" value="0">
+                                        <label>Not relevant at all</label>
+                                    </div>
+                                      
+                                    <div>
+                                        <input type="radio" id="1" name="rel" value="1">
+                                        <label>Somewhat relevant</label>
+                                    </div>
+                                
+                                    <div>
+                                        <input type="radio" id="2" name="rel" value="2">
+                                        <label>Perfectly relevant</label>
+                                    </div>
+                                </div>
+    
+                        
+                        <!-- <a href="#">Wikipedia</a> -->
+                    
+                    
+                <div class="confidence">
+                    <span> How <b>confident</b> are you that you will be able to recall the answer?</span>
+                    <ul id="con">
+                            <li style="inline-size: 120px; overflow-wrap: break-word;"> Not confident</li>
+                            <li><input type="radio" name="con" value="1" /></li>
+                            <li><input type="radio" name="con" value="2" /></li>
+                            <li><input type="radio" name="con" value="3" /></li>
+                            <li><input type="radio" name="con" value="4" /></li>
+                            <li><input type="radio" name="con" value="5" /></li>
+                            <li style="inline-size: 120px; overflow-wrap: break-word;"> Very confident </li>
+                    </ul>
+                </div>
+                <div style="position: absolute; margin-top: 30px">
+                    <button type="button" id="myButton" disabled>
+                            <i class="fa fa-arrow-right"></i> Next Query
+                    </button>
+                </div>
+                
                             
                         <!-- End right rail content -->
                     </div>
@@ -88,16 +128,55 @@
         <!-- Include script for scrolling functionality on necessary components -->
         <script type="text/javascript" src="js/queries.js"></script>
         <script type="text/javascript">
-            
+            // sessionStorage.setItem('current_page', 'template')
             document.getElementById("myButton").onclick = function ()
             {
-                // sessionStorage.setItem('first-visit', 0) 
-                sessionStorage.setItem('ques-visit', 0) 
-                // var mynum_index = Math.floor(Math.random() * pages.length); 
-                // console.log("LOG", pages[mynum_index] + '/template.html')
-                window.location.href = './question.html'
-            }
+             var pages = JSON.parse(sessionStorage.getItem('pages'))
+             sessionStorage.setItem('first-visit', 0) 
+             if (pages.length == 0) {
+                //  window.location.href = "finish.html"
+                // let prolificID = sessionStorage.getItem("prolific-id");
+                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq"
+             } else {
+                 // console.log("LOG", pages[mynum_index] + '/template.html')
+                 window.location.href = 'template.html'
+             }
+            //  LogUI.logCustomMessage({
+            //          name: 'ANSWER_FROM_USER',
+            //          metadata: {
+            //              text: document.getElementById("answer").value,
+            //              // status: playbackStatus,
+            //          },
+            //      });
+         }
         </script>
+       <script type="text/javascript">    
+        var form = document.getElementById('rel');
+        var form2 = document.getElementById('con');
+        var fc = 1;
+        var fc2 = 1;
+        
+        if (form && form2){
+            
+            form.addEventListener('change', function(e) {   
+                fc = fc + 1;
+                if (fc >=2 && fc2 >=2){
+                    document.getElementById('myButton').disabled = false; 
+                }
+                
+            })
+            form2.addEventListener('change', function(e) {   
+                fc2 = fc2 + 1;
+                
+                if (fc >=2 && fc2 >=2){
+                    
+                    document.getElementById('myButton').disabled = false; 
+                }
+                
+            })
+        }
+
+ </script>
 
     </body>
 
