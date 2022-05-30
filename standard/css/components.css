@@ -157,3 +157,48 @@ div.answer-card > ul.also {
         text-overflow: ellipsis;
     }
 
+    .speech-bubble {
+        position: relative;
+        background: #00aabb;
+        border-radius: .4em;
+        /* padding: 10px 10px; */
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
+    .speech-bubble p {
+        border-radius: 1.15rem;
+        line-height: 1.25;
+        padding: 0.5rem .875rem;
+        position: relative;
+        word-wrap: break-word;
+      }
+    p.question::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 18px solid transparent;
+        border-left-color: #00aabb;
+        border-right: 0;
+        border-top: 0;
+        margin-top: -9px;
+        margin-right: -18px;
+    }
+
+    p.answer::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 12px solid transparent;
+        border-right-color: #00aabb;
+        border-left: 0;
+        border-top: 0;
+        margin-top: -6px;
+        margin-left: -12px;
+    }
