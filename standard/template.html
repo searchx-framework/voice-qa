@@ -27,9 +27,9 @@
                    <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li> -->
                 </ul>
                 <ul class="right">
-                        <button type="button" id="myButton">
+                        <!-- <button type="button" id="myButton">
                             <i class="fa fa-arrow-right"></i>Mark Relevance
-                        </button>
+                        </button> -->
                         <span class="info-need">
                             <!-- <p id='info' ><i class="fa fa-info-circle"></i> </p> -->
                         </span>
@@ -51,14 +51,15 @@
                         <div class="answer-card">
                                 <div class="flex-container">
                                     <div class="left-container"> 
-                                        <h3> Press for answer </h3>   
+                                        <h3> Press the button to listen to the answer </h3>   
                                         <span class="answer">
                                                 
-                                                <audio controls id="audio1">
+                                                <audio  id="audio1">
                                                         <!-- <source src="horse.ogg" type="audio/ogg"> -->
                                                         <source id="answer" type="audio/mpeg">
                                                       
-                                                      </audio>
+                                                </audio>
+                                                <button onclick="playAudio()" type="button"><i class="fas fa-play"></i> Play answer</button>
                                         </span>
                                         <!-- <span class="answer-supplementary">
                                                 <b>Check out the following martial arts disciplines that are easy to learn:</b>
@@ -75,6 +76,47 @@
                                 </div>
                                 <span class="feedback"><a href="#"></a></span>
                             </div>
+                            <div class="relevance" id="rel">
+                                    <span> To what extent was the answer <b>relevant</b> to the query? </span>
+                                    <div style="margin-top: 10px;">
+                                        <input type="radio" id="0" name="rel" value="0">
+                                        <label>Not relevant at all</label>
+                                    </div>
+                                      
+                                    <div>
+                                        <input type="radio" id="1" name="rel" value="1">
+                                        <label>Somewhat relevant</label>
+                                    </div>
+                                
+                                    <div>
+                                        <input type="radio" id="2" name="rel" value="2">
+                                        <label>Perfectly relevant</label>
+                                    </div>
+                                </div>
+    
+                        
+                        <!-- <a href="#">Wikipedia</a> -->
+                    
+                    
+                <div class="confidence">
+                    <span> How <b>confident</b> are you that you will be able to recall the answer?</span>
+                    <ul id="con">
+                            <li style="inline-size: 120px; overflow-wrap: break-word;"> Not confident</li>
+                            <li><input type="radio" name="con" value="1" /></li>
+                            <li><input type="radio" name="con" value="2" /></li>
+                            <li><input type="radio" name="con" value="3" /></li>
+                            <li><input type="radio" name="con" value="4" /></li>
+                            <li><input type="radio" name="con" value="5" /></li>
+                            <li style="inline-size: 120px; overflow-wrap: break-word;"> Very confident </li>
+                    </ul>
+            </div>
+            <div style="position: absolute; margin-top: 30px">
+                <button type="button" id="myButton" disabled>
+                        Next Query
+                </button>
+            </div>
+            
+            
                             
                         <!-- End right rail content -->
                     </div>
@@ -88,48 +130,67 @@
         <!-- Include script for scrolling functionality on necessary components -->
         <script type="text/javascript" src="js/queries.js"></script>
         <script type="text/javascript">
+            var x = document.getElementById("audio1"); 
+            
+            function playAudio() { 
+                x.play(); 
+            } 
+            
+            function pauseAudio() { 
+                x.pause(); 
+            } 
+        </script>
+                
+        <script type="text/javascript">
             // sessionStorage.setItem('current_page', 'template')
             document.getElementById("myButton").onclick = function ()
             {
-                sessionStorage.setItem('ques-visit', 0) 
-                // var mynum_index = Math.floor(Math.random() * pages.length); 
-                // console.log("LOG", pages[mynum_index] + '/template.html')
-                window.location.href = './question.html'
-            }
+             var pages = JSON.parse(sessionStorage.getItem('pages'))
+             sessionStorage.setItem('first-visit', 0) 
+             if (pages.length == 0) {
+                //  window.location.href = "finish.html"
+                // let prolificID = sessionStorage.getItem("prolific-id");
+                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq"
+             } else {
+                 // console.log("LOG", pages[mynum_index] + '/template.html')
+                 window.location.href = 'template.html'
+             }
+            //  LogUI.logCustomMessage({
+            //          name: 'ANSWER_FROM_USER',
+            //          metadata: {
+            //              text: document.getElementById("answer").value,
+            //              // status: playbackStatus,
+            //          },
+            //      });
+         }
         </script>
-        <!-- <script>
-                
-                //   const input = document.getElementById('speech');
-                document.getElementById("answer-button").onclick = function ()
-                {
-                    let fv = sessionStorage.getItem('first-visit');
-                    let item = JSON.parse(sessionStorage.getItem("task"))
-                    let toSay;
-                    event.preventDefault();
-                    if( fv == 1) {
-                        let a = sessionStorage.getItem('answer')
-                        toSay = item.answer[parseInt(a)] 
-                    } else { 
-                        
-                        
-                        // console.log(item)
-                        const a = Math.round(Math.random())
-                        sessionStorage.setItem('answer', a)
-                        toSay = item.answer[a]
-                    }
-
-                        
-                        
-                        const utterance = new SpeechSynthesisUtterance(toSay);
-                        
-                        // utterance properties
-                        utterance.pitch = 1.5;
-                        utterance.rate = 1;
-                        utterance.volume = 0.8;
-
-                        speechSynthesis.speak(utterance);
+       <script type="text/javascript">    
+        var form = document.getElementById('rel');
+        var form2 = document.getElementById('con');
+        var fc = 1;
+        var fc2 = 1;
+        
+        if (form && form2){
+            
+            form.addEventListener('change', function(e) {   
+                fc = fc + 1;
+                if (fc >=2 && fc2 >=2){
+                    document.getElementById('myButton').disabled = false; 
                 }
-              </script> -->
+                
+            })
+            form2.addEventListener('change', function(e) {   
+                fc2 = fc2 + 1;
+                
+                if (fc >=2 && fc2 >=2){
+                    
+                    document.getElementById('myButton').disabled = false; 
+                }
+                
+            })
+        }
+
+ </script>
     </body>
 
 </html>

@@ -46,14 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // console.log("FV", typeof(fv))
 
 
-    if(qv == 0 && cp == "question"){
-            
-        item = JSON.parse(sessionStorage.getItem('task'))
-        need = document.getElementById('info');
-        need.textContent = item.info
-        sessionStorage.setItem('ques-visit', 1) 
-        // console.log("q", need)
-    } else if( fv == 1 && cp != "question") {
+    if( fv == 1) {
         // console.log("refresh")
         querybox = document.getElementById('query');
         answer = document.getElementById('answer')
@@ -70,9 +63,6 @@ document.addEventListener("DOMContentLoaded", function(){
         
         // answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
 
-    }  else if ( qv == 1 && cp == "question" && fv ==1) {
-        sessionStorage.setItem('ques-visit', 0) 
-        window.location.href = './question.html'
     } else {
         sessionStorage.setItem('current_page', 'template')
         let pages = JSON.parse(sessionStorage.getItem('pages'))
