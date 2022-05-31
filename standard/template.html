@@ -80,7 +80,7 @@
                                     <span> To what extent was the answer <b>relevant</b> to the query? </span>
                                     <div style="margin-top: 10px;">
                                         <input type="radio" id="0" name="rel" value="0">
-                                        <label>Not relevant at all</label>
+                                        <label>Perfectly relevant</label>
                                     </div>
                                       
                                     <div>
@@ -90,7 +90,7 @@
                                 
                                     <div>
                                         <input type="radio" id="2" name="rel" value="2">
-                                        <label>Perfectly relevant</label>
+                                        <label>Not relevant</label>
                                     </div>
                                 </div>
     
@@ -129,6 +129,13 @@
 
         <!-- Include script for scrolling functionality on necessary components -->
         <script type="text/javascript" src="js/queries.js"></script>
+        <script type="text/javascript" src="js/logui.bundle.js"></script>
+
+        <!-- The config object, specific for the page you are loading -->
+        <script type="text/javascript" src="js/logui-davoice.js"></script>
+
+        <!-- The "Driving script" - that controls LogUI -->
+        <script type="text/javascript" src="js/logui-driver.js"></script>
         <script type="text/javascript">
             var x = document.getElementById("audio1"); 
             
@@ -142,7 +149,7 @@
         </script>
                 
         <script type="text/javascript">
-            // sessionStorage.setItem('current_page', 'template')
+            sessionStorage.setItem('mode', 'voice')
             document.getElementById("myButton").onclick = function ()
             {
              var pages = JSON.parse(sessionStorage.getItem('pages'))
