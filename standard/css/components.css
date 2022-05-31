@@ -99,7 +99,7 @@ div.answer-card > span.feedback {
     font-size: 12px;
     color: #70757A;
     padding-left: 16px;
-    background-color: #FFF;
+    background-color: #f5f5f7;
 }
 
     div.answer-card > span.feedback a, div.answer-card > span.feedback a:visited, div.answer-card > span.feedback a:hover {
@@ -156,3 +156,7 @@ div.answer-card > ul.also {
         white-space: normal;
         text-overflow: ellipsis;
     }
+
+button.answerButton {
+    padding: 10px 15px 10px 15px;
+}
