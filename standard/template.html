@@ -98,7 +98,7 @@
                         <!-- <a href="#">Wikipedia</a> -->
                     
                     
-                <div class="confidence">
+                <!-- <div class="confidence">
                     <span> How <b>confident</b> are you that you will be able to recall the answer?</span>
                     <ul id="con">
                             <li style="inline-size: 120px; overflow-wrap: break-word;"> Not confident</li>
@@ -109,7 +109,7 @@
                             <li><input type="radio" name="con" value="5" /></li>
                             <li style="inline-size: 120px; overflow-wrap: break-word;"> Very confident </li>
                     </ul>
-            </div>
+            </div> -->
             <div style="position: absolute; margin-top: 30px">
                 <button type="button" id="myButton" disabled>
                         Next Query
@@ -174,28 +174,28 @@
         </script>
        <script type="text/javascript">    
         var form = document.getElementById('rel');
-        var form2 = document.getElementById('con');
+        // var form2 = document.getElementById('con');
         var fc = 1;
-        var fc2 = 1;
+        // var fc2 = 1;
         
-        if (form && form2){
+        if (form){
             
             form.addEventListener('change', function(e) {   
                 fc = fc + 1;
-                if (fc >=2 && fc2 >=2){
+                if (fc >=2 ){
                     document.getElementById('myButton').disabled = false; 
                 }
                 
             })
-            form2.addEventListener('change', function(e) {   
-                fc2 = fc2 + 1;
+            // form2.addEventListener('change', function(e) {   
+            //     fc2 = fc2 + 1;
                 
-                if (fc >=2 && fc2 >=2){
+            //     if (fc >=2 && fc2 >=2){
                     
-                    document.getElementById('myButton').disabled = false; 
-                }
+            //         document.getElementById('myButton').disabled = false; 
+            //     }
                 
-            })
+            // })
         }
 
  </script>
