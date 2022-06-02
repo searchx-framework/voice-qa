@@ -9,7 +9,7 @@ var data = [
     }, {
         "id": "rem_short_2",
         "query": "Who formed the commonwealth of independent states?",
-        "answer": [ "Commonwealth of Independent States (CIS) Alliance of 12 of the former republics of the Soviet Union (Armenia, Azerbaijan, Belarus, Georgia, Kazakstan, Kyrgyzstan, Moldova, Russia, Tajikistan, Turkmenistan, Ukraine, and Uzbekistan)",
+        "answer": [ "On December 8 1991, leaders of Russia, Belarus, and Ukraine met at the nature reserve called Belovezhskaya Pushcha in Belarus. They discussed the creation of the Commonwealth of Independent States",
         "'Commonwealth of Independent States; putative successor to the USSR, except that the Baltic Republics of Estonia, Latvia, and Lithuania never joined. ",
         "To a great extent, the history of Canada's external relations is the history of the development of a British colony into an independent nation within the commonwealth."],
         "info": "You want to find out which countries formed the commonwealth of independent states"
