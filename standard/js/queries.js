@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
             querybox.value = item.query
             // need.textContent = item.info
-            a = Math.round(Math.random())
+            a = Math.floor(Math.random() * 3)
             sessionStorage.setItem('answer', a)
             var audio1= document.getElementById("audio1")
             // console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')

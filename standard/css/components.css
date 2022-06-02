@@ -157,6 +157,6 @@ div.answer-card > ul.also {
         text-overflow: ellipsis;
     }
 
-button.answerButton {
+button.playButton, button.pauseButton {
     padding: 10px 15px 10px 15px;
 }

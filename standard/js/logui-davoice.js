@@ -31,20 +31,37 @@ let logUIConfigurationObject = {
                 },
             ],
         },
-        'ans-click': {
-            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+        'ans-play': {
+            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.playButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
             event: 'click',
-            name: 'ANSWER_CLICK'
+            name: 'ANSWER_PLAY'
         },
-        'ans-hover': {
-            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+        'ans-pause': {
+            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.pauseButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+            event: 'click',
+            name: 'ANSWER_PAUSE'
+        },
+        'play-hover': {
+            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.playButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
             event: 'mouseHover',
             properties: {
                 mouseenter: {
-                    name: 'ANS_HOVERIN',
+                    name: 'PLAY_HOVERIN',
                 },
                 mouseleave: {
-                    name: 'ANS_HOVEROUT',
+                    name: 'PLAY_HOVEROUT',
+                }
+            },
+        },
+        'pause-hover': {
+            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.pauseButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+            event: 'mouseHover',
+            properties: {
+                mouseenter: {
+                    name: 'PAUSE_HOVERIN',
+                },
+                mouseleave: {
+                    name: 'PAUSE_HOVEROUT',
                 }
             },
         },
