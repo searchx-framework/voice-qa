@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
        
     
         sessionStorage.setItem('first-visit', 1)
-        sessionStorage.setItem('ques-visit', 0) 
+        // sessionStorage.setItem('ques-visit', 0) 
         var mynum_index = Math.floor(Math.random() * pages.length); 
         item = tasks[pages[mynum_index]];
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
         querybox.value = item.query
         // need.textContent = item.info
-        a = Math.round(Math.random())
+        a = a = Math.floor(Math.random() * 3)
         sessionStorage.setItem('answer', a)
         answer.textContent = item.answer[a]
     

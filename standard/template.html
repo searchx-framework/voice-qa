@@ -144,8 +144,8 @@
              sessionStorage.setItem('first-visit', 0) 
              if (pages.length == 0) {
                 //  window.location.href = "finish.html"
-                // let prolificID = sessionStorage.getItem("prolific-id");
-                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq"
+                let prolificID = sessionStorage.getItem("prolific-id");
+                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq?prolificID=" + prolificID
              } else {
                  // console.log("LOG", pages[mynum_index] + '/template.html')
                  window.location.href = 'template.html'
