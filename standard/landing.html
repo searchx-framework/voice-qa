@@ -43,10 +43,13 @@
                         <div>
                                 <h2 class="check-list">Welcome to the study!</h2>
                                 <ul>
+                                    <li>In this study, we will provide you with pages that look like this. They will contain 1 query and the corresponding audio clip of a passage:
+                                            <img style="width: 600px; height: 180px; margin-top: 10px;" src="img/voice.png"></img>
+                                    </li>
                                     <li>You will be asked to walk through 29 search scenarios, one after the other.</li>
-                                    <li>For each scenario, we will present you with a query at the top of the page. </li>
+                                    <li>For each scenario, we will present you with a query at the top of the page (marked 1). </li>
                                     <li>For this study, you won't be able to change the query.</li>
-                                    <li>We will provide you with the audio clip of one passage below the query. You can play the passage by pressing the play button. You can also pause the passage by pressing the pause button.</li>                                
+                                    <li>We will provide you with the audio clip of one passage below the query. You can play the passage by pressing the play button (marked 2). You can also pause the passage by pressing the pause button (marked 3).</li>                                
                                     <li>Your task is to listen to the passage and judge the relevance of the passage to the query.</li>
                                     <li>You have to choose whether the passage is <i>perfectly relevant</i>, <i>somewhat relevant</i> or <i>not relevant at all</i>.</li>                                    
                                     <li>Once you are <b>satisfied</b> with your assessment click the <strong>Next query</strong> button to go to the next search scenario.</li>                                                                        
@@ -86,7 +89,7 @@
         // window.location.href = 'template.html';
             // document.getElementById("myButton").onclick   = function() {
             function loader(form) {
-                var pages = new Array(0,1,2,3,4);
+                var pages = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13);
                 sessionStorage.setItem('pages', JSON.stringify(pages))
                 sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')

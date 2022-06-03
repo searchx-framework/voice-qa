@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #1A0DAB;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #660099;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    border-bottom: 1px solid #EBEBEB;
+    width: 100%;
+    height: 132px;
+}
+
+header > div {
+    width: 1066px;
+    height: 100%;
+    position: relative;
+    margin: 0 0 0 30px;
+    font-family: 'Product Sans Regular', Arial, Helvetica, sans-serif;
+}
+
+    header > div > img {
+        width: 100px;
+        height: auto;
+        margin-top: 35px;
+        float: left;
+        filter: drop-shadow(0 0 15px rgba(151, 151, 151, 0.75));
+    }
+
+    header > div > form {
+        display: inline-block;
+        position: relative;
+        top: 25px;
+        padding: 3px;
+        margin-left: 50px;
+        border: 1px solid #F6F6F7;
+        background-color: #FFF;
+        border-radius: 40px;
+        filter: drop-shadow(0 0 10px rgba(151, 151, 151, 0.75));
+    }
+
+        header > div > form input {
+            display: inline-block;
+            height: 39px;
+            width: 380px;
+            margin: 0 10px 0 20px;
+            padding: 0;
+            line-height: 39px;
+            font-size: 16px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+            header > div > form input:focus {
+                outline: none;
+            }
+
+            header > div > form input:disabled {
+                color: #000 !important;
+                background-color: #FFF !important;
+            }
+
+        header > div > form button {
+            position: relative;
+            right: 10px;
+            border: none;
+            border-left: 1px solid #DFE1E5;
+            padding: 4px 0 4px 10px;
+            margin: 0 5px 0 10px;
+            color: #2F73E8;
+            font-size: 18px;
+            background-color: transparent;
+
+        }
+    
+    header > div > ul.tabs {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+        header > div > ul.tabs > li {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        header > div > ul.tabs > li:last-child {
+            margin-right: 0;
+        }
+
+        header > div > ul.tabs > li a {
+            display: inline-block;
+            height: 38px;
+            line-height: 38px;
+            font-size: 14px;
+            color: #5F6368;
+            border-bottom: 3px solid transparent;
+        }
+
+            header > div > ul.tabs > li a i {
+                margin: 0 5px 0 5px;
+            }
+
+            header > div > ul.tabs > li a span {
+                margin: 0 5px 0 0;
+            }
+        
+        header > div > ul.tabs > li a:visited {
+            color: #5F6368;
+        }
+
+        header > div > ul.tabs > li a.selected {
+            border-bottom: 3px solid #2F73E8;
+        }
+
+        header > div > ul.tabs > li a:hover {
+            text-decoration: none;
+        }
+
+        header > div ul.right {
+            position: absolute;
+            right: 0;
+            top: 28px;
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            line-height: 24px;
+            list-style-type: none;
+            color: #5F6368;
+            max-width: 400px;
+            text-align: right;
+        }
+        header > div ul.right > span.info-need {
+            display: inline-block;
+            font-size: 15px;
+            line-height: 17px;
+            width: auto;
+            word-wrap: break-word;
+            color: #FF0000;
+        }
+
+        header > div ul.right > li {
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            margin-right: 2px;
+        }
+
+        header > div ul.right > li:last-of-type {
+            margin-right: 0;
+        }
+
+        header > div ul.right > li a {
+            display: block;
+            text-align: center;
+            padding: 8px;
+            color: #5F6368;
+        }
+
+        header > div ul.right > li a:hover {
+            background-color: #EDEEEF;
+            border-radius: 50%;
+        }
+
+        header > div ul.right > button {
+            padding: 3px 10px 3px 10px;
+            border-radius: 8px;
+            background: #EBEBEB;
+            color: #000;
+            font-family: 'Product Sans Regular', Arial, Helvetica, sans-serif;
+        }
+
+        header > div ul.right > button:hover {
+            background-color: #202123;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        header > div ul.right > button i {
+            margin-right: 5px;
+        }
+        
+
+main > div {
+    width: 1066px;
+    height: 150px;
+    margin: 0 0 0 30px;
+}
+
+    main > div div.stats {
+        height: 43px;
+        line-height: 43px;
+        margin-bottom: 5px;
+        color: #70757A;
+        font-size: 14px;
+        font-family: 'Product Sans Regular', Arial, Helvetica, sans-serif;
+    }
+
+    main > div div.flex-container {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 45px;
+    }
+
+    main > div > div > div.left-container {
+        order: 1;
+        flex-grow: 1;
+        width: 0;
+    }
+
+    main > div > div > div.right-container {
+        order: 2;
+        width: 370px;
+        flex-shrink: 0;
+    }
+
+    /* For each item on the left rail, add a gap at the bottom */
+    main > div > div > div.left-container > div {
+        margin-bottom: 35px;
+    }
+
+/* Stage 2 (Enabling variable left/right margins on the page) */
+@media only screen and (min-width: 1120px) {
+    main > div, header > div {
+        margin: 0 auto 0 auto;
+    }
+}
+
+/* Stage 3 (For large displays only) */
+@media only screen and (min-width: 1300px) {
+    main > div, header > div {
+        width: 1086px;
+        margin: 0 auto 0 180px;
+    }
+
+    header > div > img {
+        position: absolute;
+        left: -140px;
+        width: 100px;
+        height: auto;
+        margin-top: 35px;
+        float: left;
+        filter: drop-shadow(0 0 15px rgba(151, 151, 151, 0.75));
+    }
+
+    header > div > form {
+        position: relative;
+        right: 50px;
+    }
+
+    header > div > form input {
+        width: 573px;
+    }
+
+    main > div div.flex-container {
+        column-gap: 60px;
+    }
+}
