@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     if( fv == 1) {
         // console.log("refresh")
+        let pages = JSON.parse(sessionStorage.getItem('pages'))
+        
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " + pages.length + " tasks to go"
+        document.getElementById("counter").innerHTML=counterText;
+
         querybox = document.getElementById('query');
         answer = document.getElementById('answer')
         // need = document.getElementById('info');
@@ -37,36 +42,38 @@ document.addEventListener("DOMContentLoaded", function(){
         sessionStorage.setItem('first-visit', 1)
         sessionStorage.setItem('ques-visit', 0) 
         // let cp = sessionStorage.getItem('current_page');
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " + (pages.length - 1) + " tasks to go"
+        document.getElementById("counter").innerHTML=counterText;
         
 
-            var mynum_index = Math.floor(Math.random() * pages.length); 
-            item = tasks[pages[mynum_index]];
+        var mynum_index = Math.floor(Math.random() * pages.length); 
+        item = tasks[pages[mynum_index]];
 
-            sessionStorage.setItem('task', JSON.stringify(item))
+        sessionStorage.setItem('task', JSON.stringify(item))
+    
+    
+    
+        querybox = document.getElementById('query');
+        // let answer = document.getElementById('answer');
+        // need = document.getElementById('info');
+        answer = document.getElementById('answer')
+    
         
         
         
-            querybox = document.getElementById('query');
-            // let answer = document.getElementById('answer');
-            // need = document.getElementById('info');
-            answer = document.getElementById('answer')
+        querybox.value = item.query
+        // need.textContent = item.info
+        a = Math.floor(Math.random() * 3)
+        sessionStorage.setItem('answer', a)
+        var audio1= document.getElementById("audio1")
+        // console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
+        answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
+        audio1.load();
         
-            
-            
-            
-            querybox.value = item.query
-            // need.textContent = item.info
-            a = Math.floor(Math.random() * 3)
-            sessionStorage.setItem('answer', a)
-            var audio1= document.getElementById("audio1")
-            // console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
-            answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
-            audio1.load();
-            
+    
+        pages.splice(mynum_index , 1)
         
-            pages.splice(mynum_index , 1)
-            
-            sessionStorage.setItem('pages', JSON.stringify(pages))
+        sessionStorage.setItem('pages', JSON.stringify(pages))
         
     }
 

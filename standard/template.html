@@ -31,7 +31,7 @@
                             <i class="fa fa-arrow-right"></i>Mark Relevance
                         </button> -->
                         <span class="info-need">
-                            <!-- <p id='info' ><i class="fa fa-info-circle"></i> </p> -->
+                            <p id='counter'></p> </p>
                         </span>
                     </ul>
             </div>
@@ -81,7 +81,7 @@
                                     <span> To what extent was the answer <b>relevant</b> to the query? </span>
                                     <div style="margin-top: 10px;">
                                         <input type="radio" id="0" name="rel" value="0">
-                                        <label>Perfectly relevant</label>
+                                        <label>Relevant</label>
                                     </div>
                                       
                                     <div>
@@ -92,6 +92,10 @@
                                     <div>
                                         <input type="radio" id="2" name="rel" value="2">
                                         <label>Not relevant</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="3" name="rel" value="3">
+                                        <label>I do not know</label>
                                     </div>
                                 </div>
     
@@ -141,13 +145,26 @@
         <script type="text/javascript">
             var x = document.getElementById("audio1"); 
             
+            function updateTime() {
+                var hid = document.getElementsByClassName("relevance");
+                // Emulates jQuery $(element).is(':hidden');
+                if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0 && x.currentTime > (x.duration)/2) {
+                    hid[0].style.visibility = "visible";
+                }
+                // console.log(x.currentTime)
+            }
+            
             function playAudio() { 
                 x.play(); 
+                console.log(x.duration)
+                x.ontimeupdate = updateTime;
+
             } 
             
             function pauseAudio() { 
                 x.pause(); 
             } 
+  
         </script>
                 
         <script type="text/javascript">

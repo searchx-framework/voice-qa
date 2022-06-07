@@ -1,6 +1,7 @@
 /* Organic Result (including subresults, which are indented) */
 div.relevance{
-    height: 100px
+    height: 100px;
+    visibility: hidden;
 }
 /* div.confidence{
     position: absolute;
