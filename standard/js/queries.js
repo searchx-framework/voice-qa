@@ -9,12 +9,18 @@ document.addEventListener("DOMContentLoaded", function(){
     let viewedList = window.sessionStorage.getItem('viewedList');
     viewedList = JSON.parse(viewedList);
     
+    
+                
     // if (viewedList.includes(current_task)) {
         
     // }
     if( fv == 1) {
         // cookie doesn't exist, create it now
         // console.log("refresh")
+        let pages = JSON.parse(sessionStorage.getItem('pages'))
+        
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " + pages.length + " tasks to go"
+        document.getElementById("counter").innerHTML=counterText;
     
         querybox = document.getElementById('query');
         answer = document.getElementById('answer');
@@ -29,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
         sessionStorage.setItem('current_page', 'template')
         let pages = JSON.parse(sessionStorage.getItem('pages'))
         
-        
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " + (pages.length - 1) + " tasks to go"
+        document.getElementById("counter").innerHTML=counterText;
        
     
         sessionStorage.setItem('first-visit', 1)
