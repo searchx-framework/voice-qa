@@ -43,7 +43,7 @@ var data = [
         "query": "What is the english definition of visceral?",
         "answer": [ "Definition of visceral for English Language Learners. : 1  coming from strong emotions and not from logic or reason. 2  medical : of or relating to the viscera.",
         "affective. 1  of, caused by, or expressing emotion or feeling; emotional. 2  causing emotion or feeling.",
-        "A viscero-visceral reflex is a reflex in which stimulation of visceral receptors results in activation of visceral motor phenomena"],
+        "Definition of entrail. 1. archaic: an internal part of an animal body. 2. entrails plural: bowels, guts, viscera."],
         "info": "You want to understand the definition of visceral in english language"
     },
     {
