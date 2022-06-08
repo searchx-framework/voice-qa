@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let prolificID;
     prolificID = sessionStorage.getItem('prolific-id') || null;
     let mode = sessionStorage.getItem('mode') || null;
-    let task = JSON.parse(sessionStorage.getItem('task')).id || null;
+    let task = JSON.parse(sessionStorage.getItem('task')) || null;
     let answer = sessionStorage.getItem('answer') || null;
 
     if (!prolificID) {
