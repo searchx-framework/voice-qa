@@ -161,3 +161,11 @@ div.answer-card > ul.also {
 button.playButton, button.pauseButton {
     padding: 10px 15px 10px 15px;
 }
+
+button.next-button {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
