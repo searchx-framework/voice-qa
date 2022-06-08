@@ -57,11 +57,10 @@
                                     <li>After you have gone through all 29 scenarios, we will take you to a final questionnaire to complete the study.</li>
                                     <li><b> We request you to only use the passage we provide to assess the relevance. Please do not issue queries in a separate search engine.</b></li>
                                     <li><b>Please avoid the use of your browser's back button as you go through this experiment.</b></li>
-                                    <li >When ready, type in your Prolific ID and click Submit to start the study!
-                                        <form method="GET" onsubmit="loader(this);" style="margin: 10px;">   
-                                            <input type="text" name="prolificID" style="width: 250px; line-height: 28px; padding: 0 5px 0 5px; margin-bottom: 30px;" required />
-                                            <input type="submit" value="Submit" style="margin: 1.5rem 0 0 5px; line-height: 28px; padding: 0 5px 0 5px;" />
-                                        </form>
+                                    <li >When ready, click on the Start button to start the study!
+                                        <button type="button" id="myButton" style="display: block; margin: 10px; width: 100px;">
+                                                Start
+                                        </button>
                                     </li>
                                 </ul>
                         </div>
@@ -75,6 +74,10 @@
             sessionStorage.setItem('first-visit', 0) 
             sessionStorage.setItem('current_page', 'landing')
             sessionStorage.setItem('mode', 'voice')
+            var a = location.href; 
+            var b = a.split("prolificID=").pop()
+            // var c = b.substring(b.indexOf("=")+1);
+            sessionStorage.setItem('prolific-id', b)
         </script>
         <!-- <script type="text/javascript" src="js/check.js"></script> -->
         <script type="text/javascript" src="js/logui.bundle.js"></script>
@@ -88,23 +91,23 @@
         <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
         <script type="text/javascript">
         // window.location.href = 'template.html';
-            // document.getElementById("myButton").onclick   = function() {
-            function loader(form) {
+            document.getElementById("myButton").onclick   = function() {
+            // function loader(form) {
                 var pages = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13);
                 sessionStorage.setItem('pages', JSON.stringify(pages))
-                sessionStorage.setItem('prolific-id', form.prolificID.value)
+                // sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')
                 // var pages = JSON.parse(localStorage.getItem('pages'))
             // // var pages = JSON.parse(localStorage.getItem('pages'))
             // var myarray = new Array('template1.html','template2.html','template3.html', 'template4.html');
                 // var p = pages[mynum_index]
-                form.action  = 'template.html'
+                window.location.href  = 'template.html'
 
                 // return false;
                 LogUI.logCustomMessage({
                      name: 'SESSION_START',
                      metadata: {
-                         user: form.prolificID.value,
+                         user: b,
                          // status: playbackStatus,
                      },
                  });
