@@ -71,7 +71,7 @@ let logUIConfigurationObject = {
             name: 'NEXT_CLICK'
         },
         'start-click': {
-            selector: 'main > div > div > div ul li button',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+            selector: 'main  div  div  div ul li button',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
             event: 'click',
             name: 'START_CLICK'
         },
