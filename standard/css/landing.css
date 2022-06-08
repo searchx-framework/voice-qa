@@ -1,0 +1,15 @@
+ul.check-list-items {
+    line-height: 23px;
+}
+
+ul.check-list-items li {
+    margin-bottom: 5px;
+}
+
+button.start-button {
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}

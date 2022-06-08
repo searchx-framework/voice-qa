@@ -90,7 +90,7 @@ var data = [
         "query": "Below what temperature is Hydrogen a liquid?",
         "answer": [ "At STP (standard temperature and pressure) hydrogen is a gas. It cools to a liquid at -423 °F, which is about 37 degrees above absolute zero. Eleven degrees cooler, at -434 °F, it starts to solidify.",
         "At the temperature and pressure of Jupiter's interior hydrogen is a liquid, not a gas. It is an electrical conductor and the source of Jupiter's magnetic field. This layer probably also contains some helium and traces of various  ices .",
-        "Hydrogen cyanide, sometimes called prussic acid, is a chemical compound with the chemical formula HCN. It is a colorless, extremely poisonous and flammable liquid that boils slightly above room temperature, at 25.6 °C."],
+        "Hydrogen cyanide, sometimes called prussic acid, is a chemical compound with the chemical formula HCN. It is a colorless, extremely poisonous and flammable liquid that boils slightly above room temperature, at 25.6&#8451;."],
         "info": "You want to know below what temperature is Hydrogen a liquid"
     },
     {

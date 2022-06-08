@@ -220,3 +220,11 @@ span#answer {
     line-height: 24px;
     color: #202124;
 }
+
+button.next-button {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}

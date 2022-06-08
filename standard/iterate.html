@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/fontawesome.min.css" />
+        <link rel="stylesheet" href="css/googlesans.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/iterate.css" />
+        <title>Standard SERP Template</title>
+    </head>
+
+    <body style="background: #f5f5f7;">
+        <header>
+            <div>
+                <img src="img/logo.svg" alt="Search" />
+                <form>
+                    <input type="text" name="querybox" id="query" value="Loop over each passage please..." disabled />
+                    <button type="submit" disabled><i class="fas fa-search"></i></button>
+                </form>
+                <ul class="tabs">
+                   <li><a href="#" class="selected"><i class="fas fa-search"></i><span>Answer</span></a></li>
+                   <!-- <li><a href="#"><i class="fas fa-image"></i><span>Images</span></a></li>
+                   <li><a href="#"><i class="fas fa-newspaper"></i><span>News</span></a></li>
+                   <li><a href="#"><i class="fas fa-tag"></i><span>Shopping</span></a></li>
+                   <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li> -->
+                </ul>
+                <ul class="right">
+                        <!-- <button type="button" id="myButton">
+                            <i class="fa fa-arrow-right"></i>Mark Relevance
+                        </button> -->
+                        <span class="info-need">
+                            <p id='counter'> </p>
+                        </span>
+                    </ul>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <!-- <div class="stats">
+                    About 3,200,000,000 results (0.80 seconds)
+                </div> -->
+
+                
+                <div class="flex-container">
+                        <div class="left-container">
+                        
+                        <!-- Start left rail content -->
+                        <div class="answer-card">
+                                <div class="flex-container">
+                                    <div class="left-container">    
+                                        <ul id="iterate-answers">
+                                        </ul>
+                                    </div>
+                                   
+                                </div>
+                                <span class="feedback">Featured Answer</span>
+                            </div>
+                
+                            
+                        <!-- End right rail content -->
+                    </div>
+                    <div class="right-container">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Include script for scrolling functionality on necessary components -->
+        <script type="text/javascript" src="js/task_data/tasks.js"></script>
+
+        <script type="text/javascript">
+            let listElement = document.querySelector('#iterate-answers');
+
+
+            for (let task of data) {
+                console.log(task);
+
+                listElement.innerHTML += `
+                    <li>
+                        <span class="answer-id">${task.id}</span>
+                        <span class="task-text">${task.query}</span>
+                        <ul>
+                            <li>${task.answer[0]}</li>
+                            <li>${task.answer[1]}</li>
+                            <li>${task.answer[2]}</li>
+                        </ul>
+                    </li>`;  // Grossly inefficient, but ok for testing purposes.
+            }
+        </script>
+
+ </script>
+
+    </body>
+
+</html>
