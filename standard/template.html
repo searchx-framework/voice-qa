@@ -144,7 +144,12 @@
         <script type="text/javascript" src="js/logui-driver.js"></script>
         <script type="text/javascript">
             var x = document.getElementById("audio1"); 
-            
+            x.onended = function() {
+                // console.log("The audio has ended");
+                 LogUI.logCustomMessage({
+                     name: 'AUDIO_ENDED',
+                 });
+                };
             function updateTime() {
                 var hid = document.getElementsByClassName("relevance");
                 // Emulates jQuery $(element).is(':hidden');

@@ -18,7 +18,11 @@ document.addEventListener("DOMContentLoaded", function(){
         // console.log("refresh")
         let pages = JSON.parse(sessionStorage.getItem('pages'))
         
-        var counterText = "<i class='fa fa-stopwatch'></i> You have " + (pages.length + 1)  + " pages to go"
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " + (pages.length + 1)  + " pages to go";
+
+        if (pages.length+1 == 1) {
+            counterText = "<i class='fa fa-stopwatch'></i> Final page";
+        }
         document.getElementById("counter").innerHTML=counterText;
 
         querybox = document.getElementById('query');
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         let a = sessionStorage.getItem('answer')
         var audio1= document.getElementById("audio1")
-        console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
+        // console.log("V", '../voice_answers/' + item.id + '_' + a +'.mp3')
         answer.src = '../voice_answers/' + item.id + '_' + a +'.mp3'
         audio1.load();
         
@@ -42,7 +46,11 @@ document.addEventListener("DOMContentLoaded", function(){
         sessionStorage.setItem('first-visit', 1)
         sessionStorage.setItem('ques-visit', 0) 
         // let cp = sessionStorage.getItem('current_page');
-        var counterText = "<i class='fa fa-stopwatch'></i> You have " + (pages.length) + " pages to go"
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " + (pages.length) + " pages to go";
+        if (pages.length == 1) {
+            console.log("Inside conditional");
+            counterText = "<i class='fa fa-stopwatch'></i> Final page";
+        }
         document.getElementById("counter").innerHTML=counterText;
         
 
