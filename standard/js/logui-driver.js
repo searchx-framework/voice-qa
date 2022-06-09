@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // Set up the config object for this run.
     logUIConfigurationObject.applicationSpecificData.userID = prolificID;
     logUIConfigurationObject.applicationSpecificData.mode = mode;
-    logUIConfigurationObject.applicationSpecificData.task = task;
+    logUIConfigurationObject.applicationSpecificData.task = task ? task.id: null;
     logUIConfigurationObject.applicationSpecificData.answer = answer;
     logUIConfigurationObject.logUIConfiguration.authorisationToken = 'eyJ0eXBlIjoibG9nVUktYXV0aG9yaXNhdGlvbi1vYmplY3QiLCJhcHBsaWNhdGlvbklEIjoiOWJkZGYwZTQtYzU4Yy00YTkwLTk0ZjEtMzk4NGMxNjlkNmRiIiwiZmxpZ2h0SUQiOiIyYzBlYzQxYy04MWZiLTQ4MjMtYWE1Ni1jMWY0ZTQwOTZhZTQifQ:1nvwfQ:ta5kpaHXeJ35s1xscNOTWH_fsHWYirzw_Nbgi7zYXXM';
     
