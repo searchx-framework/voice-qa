@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
         querybox.value = item.query
         // need.textContent = item.info
         let a = sessionStorage.getItem('answer')
-        answer.textContent = item.answer[parseInt(a)]    
+        answer.innerHTML = item.answer[parseInt(a)]    
     } else {
         // console.log("first")
         sessionStorage.setItem('current_page', 'template')
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // need.textContent = item.info
         a = a = Math.floor(Math.random() * 3)
         sessionStorage.setItem('answer', a)
-        answer.textContent = item.answer[a]
+        answer.innerHTML = item.answer[a]
     
         pages.splice(mynum_index , 1)
         

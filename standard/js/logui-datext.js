@@ -10,7 +10,7 @@ let logUIConfigurationObject = {
         userID: null, // To be overwritten by the driver script.
         mode: null,
         task: null,
-        answer: null,
+        // answer: null,
     },
     browserEvents: {
         trackCursor: false,
