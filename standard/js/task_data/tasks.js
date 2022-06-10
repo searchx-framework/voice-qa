@@ -35,7 +35,7 @@ var data = [
         "query": "What is medicare's definition of mechanical ventilation?",
         "answer": [ "Mechanical ventilation is the medical term for artificial ventilation where mechanical means is used to assist or replace spontaneous breathing.",
         "Situations that may call for a tracheostomy include: Medical conditions that require the use of a breathing machine (ventilator) for an extended period, usually more than one or two weeks.",
-        "Physiology Explains CPAP&#x2019;s Effectiveness. Non-invasive pressure-support ventilation (NIPSV), a method of assisting a patient&#x2019;s respiration without intubation, was first reported in the 18th century."],
+        "Non-invasive pressure-support ventilation (NIPSV), a method of assisting a patient&#x2019;s respiration without intubation, was first reported in the 18th century."],
         "info": "You want to understand the definition of mechanical ventilation according to medicare"
     },
     {
@@ -145,7 +145,7 @@ var data = [
         "id": "und_mid_5",
         "query": "Does vitamin E have anti scar properties?",
         "answer": [ "At the study&#x2019;s end, the vitamin E-enriched cream had no effect on, or actually worsened, the cosmetic appearance of scars. Of the study participants that were studied, 33% developed contact dermatitis to the vitamin E. The study authors concluded that topical vitamin E use should be discouraged.",
-        "Vitamin E, or tocopherol, is a fat-soluble antioxidant. It&#x2019;s found in capsule or liquid form at drugstores, grocery stores, health food stores, and online. The oil is typically applied to the affected area. Vitamin E may penetrate the skin and reduce the formation of free radicals (which interfere with healing).",
+        "Vitamin E, or tocopherol, is a fat-soluble antioxidant. It&#x2019;s found in capsule or liquid form at drugstores, grocery stores, health food stores, and online. The oil is typically applied to the affected area. Vitamin E may penetrate the skin and reduce the formation of free radicals.",
         "Vitamin E oil is a special product that contains Vitamin E , either organic or synthetic . But, instead of a capsule, like most vitamins, Vitamin E oil usually comes in a large bottle. It is not 100 % vitamin E as that would be too sticky."],
         "info": "You want to understand if vitamin E have anti scar properties"
     },
@@ -160,7 +160,7 @@ var data = [
     {
         "id": "rem_long_2",
         "query": "What is famvir prescribed for?",
-        "answer": [ "Famvir or Famciclovir is approved by the FDA for the treatment of cold sores. If started at the first sign of symptoms, taking a single high dose of Famvir can shorten the herpes infectionby two days. There are three major drugs commonly used to treat genital herpes symptoms: 1. acyclovir or Zovirax, 2 famciclovir or Famvir, and 3 valacyclovir or Valtrex.",
+        "answer": [ "Famvir or Famciclovir is approved by the FDA for the treatment of cold sores. If started at the first sign of symptoms, taking a single high dose of Famvir can shorten the herpes infection by two days. There are three major drugs commonly used to treat genital herpes symptoms: 1. acyclovir or Zovirax, 2 famciclovir or Famvir, and 3 valacyclovir or Valtrex.",
         "Famvir is now generic but still pricey. You have to take it twice a day. Some doctors prefer it but it&#x2019;s really not worth the price and twice a day effort unless you don&#x2019;t seem to be getting good results from valtrex or acyclovir. Acyclovir is the original oral herpes antiviral and is available as a cheap generic.",
         "Oral herpes is a very common type of infection that is caused by the herpes simplex virus. Many cold sores that people get from time to time are caused by one of the herpes viruses. The herpes simplex virus as two different types. About 10% of the cold sores are caused by herpes simplex type 2 and about 10% of the genital herpes infections are caused by herpes simplex type 1."],
         "info": "You want to find out what is famvir prescribed for"
@@ -185,7 +185,7 @@ var data = [
         "id": "rem_long_5",
         "query": "What is the average annual income of data analyst in the USA?",
         "answer": [ "A senior data analyst with the skills of a data scientist can command a high price. An entry-level data analyst with basic technical tools might be looking at anything from $35,000 to $45,000 per year. According to PayScale, the best-paying jobs in 2015 were in&#8212;you guessed it&#8212;San Francisco. There the median pay for analysts was $64,507 (25% above the national average).",
-        "Average Research Data Analyst salaries for job postings in Arizona are 15% lower than average Research Data Analyst salaries for job postings nationwide. The average salary ranks 41st among states in the country.verage Research Data Analyst salaries for job postings in Montana are 6% lower than average Research Data Analyst salaries for job postings nationwide. The average salary ranks 24th among states in the country.",
+        "Average Research Data Analyst salaries for job postings in Arizona are 15% lower than average Research Data Analyst salaries for job postings nationwide. The average salary ranks 41st among states in the country. Average Research Data Analyst salaries for job postings in Montana are 6% lower than average Research Data Analyst salaries for job postings nationwide. The average salary ranks 24th among states in the country.",
         "Psychiatrist Salary in 2016. The income of a psychiatrist for the year 2016, in the US, has a median annual average that gets around $183,614 per year. The lowest income in this branch usually reaches at $100,010 per year while the highest income among these professionals can climb up to $273,010 per year."],
         "info": "You want to know what is the average annual income of data analyst in USA"
     },
@@ -224,7 +224,7 @@ var data = [
     {
         "id": "und_long_5",
         "query": "What are exons?",
-        "answer": [ "Introns and exons are parts of genes. Exons code for proteins, whereas introns do not. Exons are parts of DNA that are converted into mature messenger RNA . The process by which DNA is used as a template to create mRNA is called transcription. This mRNA then undergoes a further process called translation where the mRNA is used to synthesize proteins, via another type of molecule called transfer RNA.",
+        "answer": [ "Introns and exons are parts of genes. Exons code for proteins, whereas introns do not. Exons are parts of DNA that are converted into mature messenger RNA. The process by which DNA is used as a template to create mRNA is called transcription. This mRNA then undergoes a further process called translation where the mRNA is used to synthesize proteins, via another type of molecule called transfer RNA.",
         "The coding region in mRNA is bounded by the five prime untranslated region and the three prime untranslated region, which are also parts of the exons. The CDS is that portion of an mRNA transcript that is translated by a ribosome. The coding region of an organism is the sum total of the organism&#x2019;s genome that is composed of gene coding regions.",
         "The major function of DNA is to encode the sequence of amino acid residues in proteins, using the genetic code. To read the genetic code, cells make a copy of a stretch of DNA in the nucleic acid RNA. These RNA copies can then used to direct protein synthesis, but they can also be used directly as parts of ribosomes or spliceosomes."],
         "info": "You want to understand the definition of exons"
