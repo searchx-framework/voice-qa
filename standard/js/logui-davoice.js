@@ -41,6 +41,11 @@ let logUIConfigurationObject = {
             event: 'click',
             name: 'ANSWER_PAUSE'
         },
+        'ans-pause': {
+            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.restartButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+            event: 'click',
+            name: 'ANSWER_RESTART'
+        },
         'play-hover': {
             selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.playButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
             event: 'mouseHover',
@@ -65,8 +70,20 @@ let logUIConfigurationObject = {
                 }
             },
         },
+        'restart-hover': {
+            selector: 'div.answer-card > div.flex-container > div.left-container > span.answer button.restartButton',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+            event: 'mouseHover',
+            properties: {
+                mouseenter: {
+                    name: 'RESTART_HOVERIN',
+                },
+                mouseleave: {
+                    name: 'RESTART_HOVEROUT',
+                }
+            },
+        },
         'next-click': {
-            selector: 'main > div > div > div.left-container div button',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
+            selector: 'main > div > div > div.left-container div button.next-button',  // Maybe we can make this a bit cleaner. Need to make this bubble up for capturing the tab name, metadata!
             event: 'click',
             name: 'NEXT_CLICK'
         },

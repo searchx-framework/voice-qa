@@ -40,28 +40,25 @@
                 </div> -->
                 <div class="grid-container">
                         <div>
-                                <h2 class="check-list">Welcome to the study!</h2>
-                                <ul class="check-list-items">
-                                    <li>In this study, we will provide you with pages that look like this. At the top you see a query (marked 1) and below it the audio clip of the passage retrieved for that query by a search system.
-                                        <img style="width: 600px; height: 220px; margin-top: 10px; display: block" src="img/voice.png"></img>
-                                    </li>
-                                    <li>You will see <b>31 such pages</b> in total.</li>
-                                    <li>For this study, you won't be able to change the query.</li>
-                                    <li>You can play the audio by pressing the play button (marked 2). You can pause the audio by pressing the pause button (marked 3). You can also restart the audio clip by pressing the restart button (marked 4).</li>                                
-                                    <li>For each page, we ask you to judge whether the audio clip passage is actually relevant to the query. You can select between 3 judgements: <i>relevant</i>, <i>somewhat relevant</i> and <i>not relevant</i>.</li> 
-                                    <li>You can also choose <i>I do not know</i> if you are unsure about the relevance of the passage.</li>
-                                    <li>The form to judge relevance will be shown once atleast half of the audio is played. However, we encourage you to listen to the whole audio for this study.</li>                                  
-                                    <li>Once you are <b>satisfied</b> with your assessment click the <strong>Next query</strong> button to go to the next page.</li>                                                                        
-                                    <li>After you have gone through all 31 scenarios, we will take you to a final questionnaire to complete the study.</li>
-                                    <li><b> We request you to only use the passage we provide to assess the relevance. Please do not issue queries in a separate search engine.</b></li>
-                                    <li><b>Please avoid the use of your browser's back button as you go through this experiment.</b></li>
-                                    <li><b>Please finish the study in one go. Don't pause it and go do something else.</b></li>
-                                    <li >When ready, click on the Start button to start the study!
-                                        <button type="button" id="myButton" class="start-button">
-                                                Start
-                                        </button>
-                                    </li>
-                                </ul>
+                            <h2 class="check-list">Welcome to Stroop Test!</h2>
+                            <ul class="check-list-items">
+                                <li>This test is designed to measure your inhibitory attention control, or simply inhibition. It refers to someone’s ability to ignore stimuli that are not relevant to the task at hand.</li>
+                                <li>We will provide you with pages that look like this. At the top you see a word (e.g. Yellow marked 1) written in colors (blue in this case) and below it four options.
+                                    <img style="width: 200px; height: 250px; margin-top: 10px; display: block" src="img/stroop_incong.png"></img>
+                                </li>                                    
+                                <li>In this test you are required to identify the color in which the word is written, not what the word says.</li>
+                                <li>For example, in the image above, you should mark "blue" from the list below as the word is written in blue (although it says yellow).</li>
+                                <li>As another example, for the following page, you should mark "red" from the list below as the word is written in red.
+                                    <img style="width: 200px; height: 250px; margin-top: 10px; display: block" src="img/stroop_cong.png"></img>
+                                </li>
+                                <li>You will be given a total of 48 such pages. Go through them as fast as you can.</li>
+                                <li><b>You will be provided with the next page only if you have marked the current page currently.</b></li>
+                                <li>When ready, click on the Start button to start the test!
+                                    <button type="button" id="myButton" class="start-button">
+                                            Start
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                         </div>
 
@@ -95,15 +92,19 @@
                 // LogUI.logCustomMessage({
                 //      name: 'NEXT_BUTTON',
                 //  });
-                var pages = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
-                sessionStorage.setItem('pages', JSON.stringify(pages))
+                var trials = Array.from(Array(48).keys());
+                sessionStorage.setItem('trials', JSON.stringify(trials))
+                sessionStorage.setItem('cong_acc', 0)
+                sessionStorage.setItem('incong_acc', 0)
+                sessionStorage.setItem('cong_time', JSON.stringify([]))
+                sessionStorage.setItem('incong_time', JSON.stringify([]))
                 // sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')
                 // var pages = JSON.parse(localStorage.getItem('pages'))
             // // var pages = JSON.parse(localStorage.getItem('pages'))
             // var myarray = new Array('template1.html','template2.html','template3.html', 'template4.html');
                 // var p = pages[mynum_index]
-                window.location.href  = 'template.html'
+                window.location.href  = 'stroop.html'
 
                 // return false;
                 

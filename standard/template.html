@@ -61,7 +61,8 @@
                                                 </audio>
                                                 <button onclick="playAudio()" type="button" class="playButton"><i class="fas fa-play"></i>&nbsp;Play Answer </button>
                                                 <button onclick="pauseAudio()" type="button" class="pauseButton"><i class="fas fa-pause"></i>&nbsp;Pause Answer </button>
-                                        </span>
+                                                <button onclick="restartAudio()" type="button" class="restartButton"><i class="fas fa-redo"></i>&nbsp; Restart Answer </button>
+                                            </span>
                                         <!-- <span class="answer-supplementary">
                                                 <b>Check out the following martial arts disciplines that are easy to learn:</b>
                                                 <ol>
@@ -161,13 +162,17 @@
             
             function playAudio() { 
                 x.play(); 
-                console.log(x.duration)
+                // console.log(x.duration)
                 x.ontimeupdate = updateTime;
 
             } 
             
             function pauseAudio() { 
                 x.pause(); 
+            } 
+            function restartAudio() { 
+                x.currentTime = 0;
+                x.play(); 
             } 
   
         </script>

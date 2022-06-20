@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/fontawesome.min.css" />
+        <link rel="stylesheet" href="css/googlesans.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/landing.css" />
+        <title>Search Experiment</title>
+    </head>
+
+    <body style="background: #f5f5f7;">
+        <header>
+            <div>
+                <h2>Stroop Test</h2>
+                <ul class="right">
+                        <!-- <button type="button" id="myButton">
+                            <i class="fa fa-arrow-right"></i>Mark Relevance
+                        </button> -->
+                        <span class="info-need">
+                            <p id='counter'></p> </p>
+                        </span>
+                    </ul>
+            </div>
+
+        </header>
+        <main>
+            <div>
+                <div class="flex-container">
+                    <div class="left-container">
+                        <div class="stroop" id="stroop">
+
+                            <span id="heading"> </span>
+                            <div >
+                                <!-- <input type="radio" id="col_0" name="stroop" >
+                                <label id="l_0"></label> -->
+                                1. <button class="stroopButton" id="l_0" type="submit"></button>
+                            </div>
+                                
+                            <div>
+                                2. <button class="stroopButton" id="l_1" type="submit"></button>
+                            </div>
+                        
+                            <div>
+                                3. <button class="stroopButton" id="l_2" type="submit"></button>
+                            </div>
+                            <div>
+                                4. <button class="stroopButton" id="l_3" type="submit"></button>
+                            </div>
+                        </div>
+                        <div class="stroop_m">
+                            <span id ="stroop_m"> </span>
+                            <button type="button" id="myButton" class="start-button">
+                                    Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="js/task_data/stroop_tasks.js"></script>
+        <script type="text/javascript" src="js/logui.bundle.js"></script>
+
+        <!-- The config object, specific for the page you are loading -->
+        <script type="text/javascript" src="js/logui-davoice.js"></script>
+
+        <!-- The "Driving script" - that controls LogUI -->
+        <script type="text/javascript" src="js/logui-driver.js"></script>
+        <script type="text/javascript">
+        const d = new Date();
+        let curr_time = d.getTime();
+        let stasks = stroop_data
+        
+        let trials = JSON.parse(sessionStorage.getItem('trials'));
+        var mynum_index = Math.floor(Math.random() * trials.length); 
+        // console.log(stasks.length, trials.length)
+        item = stasks[trials[mynum_index]];
+        let ca = parseInt(sessionStorage.getItem("cong_acc")) || 0;
+        let ia = parseInt(sessionStorage.getItem("incong_acc")) || 0;
+        let ct = JSON.parse(sessionStorage.getItem('cong_time')) || [];
+        let it = JSON.parse(sessionStorage.getItem('incong_time')) || [];
+        const average = (array) => array.reduce((a, b) => a + b) / array.length;
+
+        var rem_task = (4-ca -ia);
+        document.addEventListener("DOMContentLoaded", function(){
+            if (rem_task == 0){
+                document.getElementById("stroop").style.display = "none";
+                document.getElementsByClassName("stroop_m")[0].style.visibility = "visible";;
+
+                var score = Math.round((average(it) - average(ct))*100)/100;
+                var msg = document.getElementById("stroop_m");
+                // console.log(msg)
+                msg.innerHTML = 'You have completed the stroop test! Your score is ' + score +'.'
+                LogUI.logCustomMessage({
+                        name: 'STROOP_SCORE',
+                        metadata: {
+                            score: score,
+                            it: it,
+                            ct: ct,
+                            // status: playbackStatus,
+                        },
+                    });
+            }
+        })
+
+        document.getElementById("heading").innerHTML = '<h3 style="color:' + item.color + ' ;">' + item.text + ' </h3>';
+        var counterText = "<i class='fa fa-stopwatch'></i> You have " +  rem_task  + " pages to go";
+        document.getElementById("counter").innerHTML=counterText;
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+        var colors = ["red", "green", "yellow", "blue"]
+        colors = shuffle(colors)
+        for (let i = 0; i <=3; i++) {
+            var cid = "col_" + i;
+            var lid = "l_" + i;
+            // document.getElementById(cid).value = colors[i];
+            document.getElementById(lid).innerHTML = colors[i];
+            
+        }
+        // var form = document.getElementById('stroop');
+        var answer;
+        document.getElementById('l_0').onclick = function() {
+            answer = document.getElementById('l_0').innerHTML
+            checkAnswer(answer)
+        }
+        document.getElementById('l_1').onclick = function() {
+            answer = document.getElementById('l_1').innerHTML
+            checkAnswer(answer)
+        }
+        document.getElementById('l_2').onclick = function() {
+            answer = document.getElementById('l_2').innerHTML
+            checkAnswer(answer)
+        }
+        document.getElementById('l_3').onclick = function() {
+            answer = document.getElementById('l_3').innerHTML
+            checkAnswer(answer)
+        }
+        function checkAnswer(a){
+            console.log(a)
+            if(a === item.color){
+                if (item.type === "cong"){
+                    cong_time = (new Date() - curr_time)/1000;
+                    ct.push(cong_time)
+                    ca += 1
+                    // console.log(radios[i].value, item.color, ca)
+                    sessionStorage.setItem('cong_time', JSON.stringify(ct)) 
+                    sessionStorage.setItem('cong_acc', ca) 
+                } else {
+                    incong_time = (new Date() - curr_time)/1000
+                    it.push(incong_time)
+                    ia += 1
+                    // console.log(radios[i].value, item.color, ia)
+                    sessionStorage.setItem('incong_time', JSON.stringify(it)) 
+                    sessionStorage.setItem('incong_acc', ia)
+                }
+                trials.splice(mynum_index , 1)
+
+                sessionStorage.setItem('trials', JSON.stringify(trials))
+                window.location.href = "stroop.html";
+            }
+        }
+        
+
+        </script>
+
+    </body>
+</html>
+
+
+    
