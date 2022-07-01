@@ -74,9 +74,9 @@
             sessionStorage.setItem('current_page', 'landing')
             sessionStorage.setItem('mode', 'voice')
             var a = location.href; 
-            var b = a.split("prolificID=").pop()
+            // var b = a.split("prolificID=").pop()
             // var c = b.substring(b.indexOf("=")+1);
-            sessionStorage.setItem('prolific-id', b)
+            sessionStorage.setItem('prolific-id', "test")
         </script>
         <!-- <script type="text/javascript" src="js/check.js"></script> -->
         <script type="text/javascript" src="js/logui.bundle.js"></script>
@@ -95,7 +95,7 @@
                 // LogUI.logCustomMessage({
                 //      name: 'NEXT_BUTTON',
                 //  });
-                var pages = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+                var pages = Array.from(Array(5).keys());
                 sessionStorage.setItem('pages', JSON.stringify(pages))
                 // sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')

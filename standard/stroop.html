@@ -54,7 +54,7 @@
                         <div class="stroop_m">
                             <span id ="stroop_m"> </span>
                             <button type="button" id="myButton" class="start-button">
-                                    Next
+                                    Next Test
                             </button>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
             if (rem_task == 0){
                 document.getElementById("stroop").style.display = "none";
                 document.getElementsByClassName("stroop_m")[0].style.visibility = "visible";;
-
+                
                 var score = Math.round((average(it) - average(ct))*100)/100;
                 var msg = document.getElementById("stroop_m");
                 // console.log(msg)
@@ -103,6 +103,11 @@
                             // status: playbackStatus,
                         },
                     });
+
+                sessionStorage.setItem('stroop', score)
+                document.getElementById("myButton").onclick = function () {
+                    window.location.href="operation_span.html"
+                }
             }
         })
 
