@@ -42,6 +42,7 @@
                         <div>
                                 <h2 class="check-list">Welcome to the study!</h2>
                                 <ul class="check-list-items"> 
+                                    <img style="width: 650px; height: 120px; margin-top: 10px; display: block" src="img/Overview4.png"></img>
                                     <li>In this study, we will provide you with pages that look like this. 
                                             At the top you see a query (marked 1) and below it the passage retrieved for that query by a search system (marked 2).
                                             <img style="width: 600px; height: 200px; margin-top: 10px; display: block;" src="img/text.png"></img>
@@ -72,10 +73,7 @@
             sessionStorage.setItem('first-visit', 0) 
             sessionStorage.setItem('current_page', 'landing')
             sessionStorage.setItem('mode', 'text')
-            var a = location.href; 
-            var b = a.split("prolificID=").pop()
-            // var c = b.substring(b.indexOf("=")+1);
-            sessionStorage.setItem('prolific-id', b)
+
         </script>
         
         <script type="text/javascript" src="js/logui.bundle.js"></script>
@@ -90,7 +88,7 @@
         <script type="text/javascript">
         // window.location.href = 'template.html';
             document.getElementById("myButton").onclick   = function() {
-                var pages = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
+                var pages = Array.from(Array(5).keys());
                 sessionStorage.setItem('pages', JSON.stringify(pages))
                 
                 // sessionStorage.setItem('serp', 'list_simple_serp')

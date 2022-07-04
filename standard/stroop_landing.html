@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/fontawesome.min.css" />
+        <link rel="stylesheet" href="css/googlesans.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/landing.css" />
+        <title>Search Experiment</title>
+    </head>
+
+    <body style="background: #f5f5f7;">
+        <header>
+            <div>
+                <img src="img/logo.svg" alt="Search" />
+                <!-- <form>
+                    <input type="text" name="querybox" value="query goes here" disabled />
+                    <button type="submit" disabled><i class="fas fa-search"></i></button>
+                </form> -->
+                <!-- <ul class="tabs">
+                   <li><a href="#" class="selected"><i class="fas fa-search"></i><span>All</span></a></li>
+                   <li><a href="#"><i class="fas fa-image"></i><span>Images</span></a></li>
+                   <li><a href="#"><i class="fas fa-newspaper"></i><span>News</span></a></li>
+                   <li><a href="#"><i class="fas fa-tag"></i><span>Shopping</span></a></li>
+                   <li><a href="#"><i class="fas fa-ellipsis-v"></i><span>More</span></a></li>
+                </ul> -->
+                <ul class="right">
+ 
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <div>
+                <!-- <div class="stats">
+                    About 3,200,000,000 results (0.80 seconds)
+                </div> -->
+                <div class="grid-container">
+                        <div>
+                            <h2 class="check-list">Welcome to Stroop Test!</h2>
+                            <ul class="check-list-items">
+                                <img style="width: 650px; height: 120px; margin-top: 10px; display: block" src="img/Overview2.png"></img>
+                                <li>This test is designed to measure your inhibitory attention control, or simply inhibition. It refers to someone’s ability to ignore stimuli that are not relevant to the task at hand.</li>
+                                <li>We will provide you with pages that look like this. At the top you see a word e.g. Yellow (marked 1) written in colors (green in this case) and below it four options (marked 2).
+                                    <img style="width: 200px; height: 200px; margin-top: 10px; display: block" src="img/stroop_incong.png"></img>
+                                </li>                                    
+                                <li>In this test you are required to identify the color in which the word is written, not what the word says.</li>
+                                <li>For example, in the image above, you should mark "green" from the list below as the word is written in green (although it says yellow).</li>
+                                <li>As another example, for the following page, you should mark "blue" from the list below as the word is written in blue.
+                                    <img style="width: 200px; height: 200px; margin-top: 10px; display: block" src="img/stroop_cong.png"></img>
+                                </li>
+                                <li>You will be given a total of 48 such pages. Go through them as fast as you can. </li>
+                                <li><b>You will be scored based on how quickly you can finish the 48 pages. Please do not pause during the test as it will mess with the score.</b></li>
+                                <li><b>You will be provided with the next page only if you have marked the current page currently.</b></li>
+                                <li>When ready, click on the Start button to start the test!
+                                    <button type="button" id="myButton" class="start-button">
+                                            Start
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+
+                    </div> 
+                </main>
+        <!-- Include script for scrolling functionality on necessary components -->
+        <script type="text/javascript">
+            let currentPage="landing";
+            sessionStorage.setItem('first-visit', 0) 
+            sessionStorage.setItem('current_page', 'landing')
+            sessionStorage.setItem('mode', 'voice')
+            var a = location.href; 
+            var b = a.split("prolificID=").pop()
+            // var c = b.substring(b.indexOf("=")+1);
+            sessionStorage.setItem('prolific-id', b)
+        </script>
+        <!-- <script type="text/javascript" src="js/task_data/temp.js"></script> -->
+        <!-- <script type="text/javascript" src="js/check.js"></script> -->
+        <script type="text/javascript" src="js/logui.bundle.js"></script>
+
+         <!-- The config object, specific for the page you are loading -->
+         <script type="text/javascript" src="js/logui-datext.js"></script>
+ 
+         <!-- The "Driving script" - that controls LogUI -->
+         <script type="text/javascript" src="js/logui-driver.js"></script>
+        <!-- <script type="text/javascript" src="js/web_scroll.js"></script> -->
+        <!-- <script type="text/javascript" src="js/scroll.js"></script> -->
+        <script type="text/javascript">
+        // window.location.href = 'template.html';
+            document.getElementById("myButton").onclick   = function() {
+            // function loader(form) {
+                // LogUI.logCustomMessage({
+                //      name: 'NEXT_BUTTON',
+                //  });
+                var trials = Array.from(Array(48).keys());
+                sessionStorage.setItem('trials', JSON.stringify(trials))
+                sessionStorage.setItem('cong_acc', 0)
+                sessionStorage.setItem('incong_acc', 0)
+                sessionStorage.setItem('cong_time', JSON.stringify([]))
+                sessionStorage.setItem('incong_time', JSON.stringify([]))
+                // sessionStorage.setItem('prolific-id', form.prolificID.value)
+                // sessionStorage.setItem('serp', 'list_simple_serp')
+                // var pages = JSON.parse(localStorage.getItem('pages'))
+            // // var pages = JSON.parse(localStorage.getItem('pages'))
+            // var myarray = new Array('template1.html','template2.html','template3.html', 'template4.html');
+                // var p = pages[mynum_index]
+                window.location.href  = 'stroop.html'
+
+                // return false;
+                
+            }
+        </script>
+        <!-- <script>
+            // console.log("temp_d", temp_d)
+            var ospan = 0;
+            var math_acc = 0;
+            temp_d.forEach((element, idx) => {
+
+                if (element.trial_type === "html-button-operationspan"){
+                    math_acc += parseInt(element.accuracy);
+                    
+                }
+                if (element.trial_type === "operation-span-recall"){
+                    
+                    if (math_acc/element.set_size > 0.85){
+                        if (element.accuracy === element.set_size){
+                            ospan += element.accuracy
+                            console.log("I AM HERE", idx, ospan)
+                        }
+                    }
+                    math_acc = 0;
+                    
+                }
+            });
+        </script> -->
+    </body>
+</html>

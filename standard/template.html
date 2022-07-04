@@ -140,7 +140,9 @@
              if (pages.length == 0) {
                 //  window.location.href = "finish.html"
                 let prolificID = sessionStorage.getItem("prolific-id");
-                 window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_bE3f6UjiOHOERue?prolificID=" + prolificID
+                let ospan = sessionStorage.getItem("ospan");
+                let stroop = sessionStorage.getItem("stroop");
+                window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_bE3f6UjiOHOERue?prolificID=" + prolificID + "&ospan=" + ospan + "&stroop=" + stroop
              } else {
                  // console.log("LOG", pages[mynum_index] + '/template.html')
                  window.location.href = 'template.html'
