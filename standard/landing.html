@@ -75,9 +75,9 @@
             sessionStorage.setItem('current_page', 'landing')
             sessionStorage.setItem('mode', 'voice')
             var a = location.href; 
-            // var b = a.split("prolificID=").pop()
+            var b = a.split("prolificID=").pop()
             // var c = b.substring(b.indexOf("=")+1);
-            sessionStorage.setItem('prolific-id', "test")
+            sessionStorage.setItem('prolific-id', b)
         </script>
         <!-- <script type="text/javascript" src="js/check.js"></script> -->
         <script type="text/javascript" src="js/logui.bundle.js"></script>
