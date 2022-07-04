@@ -283,7 +283,10 @@ var feedback = {
     type:"instructions",
     // questions: [{prompt: "Enter subject number"}],
     pages: function(){
-      return ["<div style='font-size:20px;'>Welcome to the second test, click the Continue button to read the instructions</div>"]
+      var s = ""
+      s += '<img style="width: 650px; height: 120px; margin-top: 10px; display: block" src="img/Overview3.png"></img>'
+      s += "<div style='font-size:20px;'>Welcome to the second test, click the Continue button to read the instructions</div>"
+      return [s]
     },
     allow_backward: false,
     button_label_next: "Continue",
@@ -332,6 +335,7 @@ var feedback = {
               
           }
       });
+    sessionStorage.setItem("ospan", ospan);
       
     // window.onload(){ 
 
@@ -358,7 +362,7 @@ var feedback = {
       return text
   },
     choices: jsPsych.NO_KEYS,
-    choices: ["Post Survey"],
+    choices: ["Main study"],
     on_finish: function(){
       // document.addEventListener("DOMContentLoaded", function(){
         // LogUI.logCustomMessage({
@@ -370,9 +374,10 @@ var feedback = {
         // });
 
       // });
-      let prolificID = sessionStorage.getItem("prolific-id");
-      let stroop = sessionStorage.getItem("stroop");
-      window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq?prolificID=" + prolificID +"&ospan=" + ospan + "&stroop=" + stroop
+      // let prolificID = sessionStorage.getItem("prolific-id");
+      // let stroop = sessionStorage.getItem("stroop");
+      window.location.href = 'landing.html'
+      // window.location.href = "https://tudelft.fra1.qualtrics.com/jfe/form/SV_djwntwQT266m4Wq?prolificID=" + prolificID +"&ospan=" + ospan + "&stroop=" + stroop
     }
   }
   var test_stack = {
