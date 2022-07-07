@@ -16,6 +16,7 @@
         <header>
             <div>
                 <img src="img/logo.svg" alt="Search" />
+                <span class="stage">Task 1</span>
                 <!-- <form>
                     <input type="text" name="querybox" value="query goes here" disabled />
                     <button type="submit" disabled><i class="fas fa-search"></i></button>
@@ -40,22 +41,30 @@
                 </div> -->
                 <div class="grid-container">
                         <div>
-                            <h2 class="check-list">Welcome to Stroop Test!</h2>
-                            <ul class="check-list-items">
-                                <img style="width: 650px; height: 120px; margin-top: 10px; display: block" src="img/Overview2.png"></img>
-                                <li>This test is designed to measure your inhibitory attention control, or simply inhibition. It refers to someone’s ability to ignore stimuli that are not relevant to the task at hand.</li>
-                                <li>We will provide you with pages that look like this. At the top you see a word e.g. Yellow (marked 1) written in colors (green in this case) and below it four options (marked 2).
-                                    <img style="width: 200px; height: 200px; margin-top: 10px; display: block" src="img/stroop_incong.png"></img>
-                                </li>                                    
-                                <li>In this test you are required to identify the color in which the word is written, not what the word says.</li>
-                                <li>For example, in the image above, you should mark "green" from the list below as the word is written in green (although it says yellow).</li>
-                                <li>As another example, for the following page, you should mark "blue" from the list below as the word is written in blue.
-                                    <img style="width: 200px; height: 200px; margin-top: 10px; display: block" src="img/stroop_cong.png"></img>
+                            <img class="overview" src="img/Overview2.png" />
+                            <ul class="test-explainer">
+                                <li><strong>For this first task, you will be shown several screens with a colour name presented at the top. Each name is written in a colour. You have to identify the <u>colour in which the name is written</u>, not what the name is.</strong></li>
+
+                                <li>Take a look at the example screenshot below. At the top, you see a name (e.g., <em>Yellow</em>, marked 1) written in the colour <span style="color: green;">green</span>. Below it, there are four options (marked 2).</li>
+
+                                <li>
+                                    <img src="img/stroop_incong.png" />
                                 </li>
-                                <li>You will be given a total of 48 such pages. Go through them as fast as you can. </li>
-                                <li><b>You will be scored based on how quickly you can finish the 48 pages. Please do not pause during the test as it will mess with the score.</b></li>
-                                <li><b>You will be provided with the next page only if you have marked the current page currently.</b></li>
-                                <li>When ready, click on the Start button to start the test!
+
+                                <li><strong>For this example, you should select green from the list, as the colour the name is presented in is <span style="color: green;">green</span> (although the name is <em>Yellow</em>).</strong> Once you select the correct option, a <strong>Next</strong> button will appear, taking you to the next step.</li>
+
+                                <li>
+                                    <hr />
+                                </li>
+
+                                <li><strong>A total of 48 screens will be presented to you. Complete them as fast as you can.</strong></li>
+                                <li><strong><u>Please do not undertake another activity while undertaking this task. You risk being disqualified from this study if you do.</u></strong></li>
+
+                                <li>
+                                    <hr />
+                                </li>
+
+                                <li>When you are ready to begin, click the <strong>Start</strong> button below to begin.
                                     <button type="button" id="myButton" class="start-button">
                                             Start
                                     </button>
