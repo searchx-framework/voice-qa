@@ -113,7 +113,8 @@ readInstruct = function(){
 var instructions = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;"><b>INSTRUCTIONS</b><br><br><br>This is the second task. <br><br>This task has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
+      pageOne = '<img style="width: 650px; height: auto; margin-top: 10px; display: block" src="img/Overview3.png"></img>'
+      pageOne += '<div style="font-size:20px;"><br>Welcome to the second task! <br><br>This task has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
       pageTwo = '<div style="font-size:20px;">We will first practice <b>LETTER MEMORIZATION</b>.<br><br>A sequence of letters will appear on the screen one at a time (around 3 to 6 in a trial).<br>Try to remember each letter in the order presented.<br><br>After letter presentation, you will see a screen listing 16 possible letters.<br>Your task is to select each letter that was presented in its correct presentation order. <br><br>Use the mouse to select the appropriate letters <br>If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><b>Remember, it is important that you select the letters in the order that you saw them.</b><br> So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.<br><br>Press "Next" for practice trials.<br><br></div>'
       return [pageOne, pageTwo]//, pageThree]
     },
@@ -412,7 +413,8 @@ var feedback = {
     repetitions: nfullDemo
   }
 
-  timeline = [p_details]
+  // timeline = [p_details]
+  timeline = []
   // timeline.push({
   //   type: 'fullscreen',
   //   fullscreen_mode: true
