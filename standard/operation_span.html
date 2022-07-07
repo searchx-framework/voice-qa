@@ -107,11 +107,13 @@
     }
     return '<div style="font-size:46px;">'+num1+operation+num2+' = '+ans+'<br><br><br><br></div>'
   }
-
+readInstruct = function(){
+  window.location.href="operation_span.html"
+}
 var instructions = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;"><b>INSTRUCTIONS</b><br><br><br>This is the operation span test. This test is desgined to evaluate your working memory.<br><br>This test has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
+      pageOne = '<div style="font-size:20px;"><b>INSTRUCTIONS</b><br><br><br>This is the second test. <br><br>This test has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
       pageTwo = '<div style="font-size:20px;">We will first practice <b>LETTER MEMORIZATION</b>.<br><br>A sequence of letters will appear on the screen one at a time (around 3 to 6 in a trial).<br>Try to remember each letter in the order presented.<br><br>After letter presentation, you will see a screen listing 16 possible letters.<br>Your task is to select each letter that was presented in its correct presentation order. <br><br>Use the mouse to select the appropriate letters <br>If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><b>Remember, it is important that you select the letters in the order that you saw them.</b><br> So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.<br><br>Press "Next" for practice trials.<br><br></div>'
       return [pageOne, pageTwo]//, pageThree]
     },
@@ -149,7 +151,8 @@ var instructions = {
   var instructions4 = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;">We have finished with the practice trials.<br><br><b>We will now start with the main trials.</b><br> There will be 8 trials (of varying sizes) in total. Proceed only if you have understood the task. <br><br> Your score will be equal to the total number of letters correctly memorized in order. <br> <b>If you do not get 75% of the maths problem correct in a trial, <br>your score for that trial will not be counted</b>. <br> Please do not write down the letters and perform the test only using your memory. <br>Press "Next" to start the main trials.<br><br></div>'
+      pageOne = '<div style="font-size:20px;">We have finished with the practice trials.<br><br><b>We will now start with the main trials.</b><br> There will be 8 trials (of varying sizes) in total. Proceed only if you have understood the task. <br><br> Please do not write down the letters and perform the test only using your memory. <br>Press "Practice Again" to read the instructions and go through the tutorial again.<br> <br>Press "Next" to start the main trials.<br><br></div>'
+      pageOne += '<div class="jspsych-btn" style="display: inline-block; width: 100px; margin:'+10+' '+2+'" id="jspsych-html-button-response-button-clear" onclick="readInstruct(this)">Practice Again</div>';
       return [pageOne]
     },
     allow_backward: false,
