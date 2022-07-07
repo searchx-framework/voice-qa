@@ -37,8 +37,8 @@
   //----- CUSTOMIZABLE VARIABLES -----------------------------------------
 
     minSetSize = 4 // starting length of each trial (i.e., min number of letters in a trial)
-    maxSetSize = 7 // ending length of each trial (i.e., max number of letters in a trial)
-    repSet = 2 // number of times each set size should be repeated
+    maxSetSize = 4 // ending length of each trial (i.e., max number of letters in a trial)
+    repSet = 1 // number of times each set size should be repeated
     randomize = true // present different set sizes in random order. if false, set sizes will be presented in ascending order
     file_name = null // file name for data file. if null, a default name consisting of the participant ID and a unique number is chosen.
     local = false // save the data file locally.
@@ -64,8 +64,8 @@
   if (randomize){
     setSizes = jsPsych.randomization.sampleWithoutReplacement(setSizes, nTrials)} // shuffle through the set sizes
 
-  var letterMemDemoArray = [3, 5]  // set sizes of initial demo trials
-  var fullDemoArray = [3, 4]       // set sizes of full demo trials
+  var letterMemDemoArray = [3]  // set sizes of initial demo trials
+  var fullDemoArray = [3]       // set sizes of full demo trials
   var nPracticeTrials = letterMemDemoArray.length
   var nfullDemo = fullDemoArray.length
   var nCogLoadDemo = 0
