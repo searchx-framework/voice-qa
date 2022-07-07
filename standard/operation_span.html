@@ -113,7 +113,8 @@ readInstruct = function(){
 var instructions = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;"><b>INSTRUCTIONS</b><br><br><br>This is the second test. <br><br>This test has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
+      pageOne = '<img style="width: 650px; height: auto; margin-top: 10px; display: block" src="img/Overview3.png"></img>'
+      pageOne += '<div style="font-size:20px;"><br>Welcome to the second task! <br><br>This task has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
       pageTwo = '<div style="font-size:20px;">We will first practice <b>LETTER MEMORIZATION</b>.<br><br>A sequence of letters will appear on the screen one at a time (around 3 to 6 in a trial).<br>Try to remember each letter in the order presented.<br><br>After letter presentation, you will see a screen listing 16 possible letters.<br>Your task is to select each letter that was presented in its correct presentation order. <br><br>Use the mouse to select the appropriate letters <br>If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><b>Remember, it is important that you select the letters in the order that you saw them.</b><br> So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.<br><br>Press "Next" for practice trials.<br><br></div>'
       return [pageOne, pageTwo]//, pageThree]
     },
@@ -151,7 +152,7 @@ var instructions = {
   var instructions4 = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;">We have finished with the practice trials.<br><br><b>We will now start with the main trials.</b><br> There will be 8 trials (of varying sizes) in total. Proceed only if you have understood the task. <br><br> Please do not write down the letters and perform the test only using your memory. <br>Press "Practice Again" to read the instructions and go through the tutorial again.<br> <br>Press "Next" to start the main trials.<br><br></div>'
+      pageOne = '<div style="font-size:20px;">We have finished with the practice trials.<br><br><b>We will now start with the main trials.</b><br> There will be 8 trials (of varying sizes) in total. Proceed only if you have understood the task. <br><br> Please do not write down the letters and perform the task only using your memory. <br>Press "Practice Again" to read the instructions and go through the tutorial again.<br> <br>Press "Next" to start the main trials.<br><br></div>'
       pageOne += '<div class="jspsych-btn" style="display: inline-block; width: 100px; margin:'+10+' '+2+'" id="jspsych-html-button-response-button-clear" onclick="readInstruct(this)">Practice Again</div>';
       return [pageOne]
     },
@@ -287,8 +288,8 @@ var feedback = {
     // questions: [{prompt: "Enter subject number"}],
     pages: function(){
       var s = ""
-      s += '<img style="width: 650px; height: 120px; margin-top: 10px; display: block" src="img/Overview3.png"></img>'
-      s += "<div style='font-size:20px;'>Welcome to the second test, click the Continue button to read the instructions</div>"
+      s += '<img style="width: 650px; height: auto; margin-top: 10px; display: block" src="img/Overview3.png"></img>'
+      s += "<div style='font-size:20px;'>Welcome to the second task, click the Continue button to read the instructions</div>"
       return [s]
     },
     allow_backward: false,
@@ -359,12 +360,12 @@ var feedback = {
   var conclusion = {
     type: 'html-button-operationspan',
     stimulus: function(){
-      text = '<div style="font-size:20px;">This task is over.<br><br>Your score is ' + ospan + '<br><br></div>';  
-      text += '<div style="font-size:20px;">Click this button to go to the main relevance judgement study </div>'
+      text = '<div style="font-size:20px;">You have completed task 2!<br><br></div>';  
+      text += '<div style="font-size:20px;">Click this button to go to Task 3 (the relevance judgement task).</div>'
       return text
   },
     choices: jsPsych.NO_KEYS,
-    choices: ["Main study"],
+    choices: ["Next Task"],
     on_finish: function(){
       // document.addEventListener("DOMContentLoaded", function(){
         // LogUI.logCustomMessage({
@@ -412,7 +413,8 @@ var feedback = {
     repetitions: nfullDemo
   }
 
-  timeline = [p_details]
+  // timeline = [p_details]
+  timeline = []
   // timeline.push({
   //   type: 'fullscreen',
   //   fullscreen_mode: true
