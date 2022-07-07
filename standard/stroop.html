@@ -15,7 +15,8 @@
     <body style="background: #f5f5f7;">
         <header>
             <div>
-                <h2>Stroop Test</h2>
+                <img src="img/logo.svg" alt="Search" />
+                <span class="stage">Task 1</span>
                 <ul class="right">
                         <!-- <button type="button" id="myButton">
                             <i class="fa fa-arrow-right"></i>Mark Relevance
@@ -93,7 +94,7 @@
                 var score = Math.round((average(it) - average(ct))*100)/100;
                 var msg = document.getElementById("stroop_m");
                 // console.log(msg)
-                msg.innerHTML = 'You have completed the stroop test! Your score is ' + score +'.'
+                msg.innerHTML = 'You have completed task 1!'
                 LogUI.logCustomMessage({
                         name: 'STROOP_SCORE',
                         metadata: {
