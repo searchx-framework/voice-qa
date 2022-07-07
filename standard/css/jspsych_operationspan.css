@@ -23,6 +23,7 @@
    margin: auto;
    flex: 1 1 100%;
    width: 100%;
+   background-color: #f5f5f7;
  }
 
  .jspsych-content {
