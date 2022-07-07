@@ -54,7 +54,7 @@
                         <div class="stroop_m">
                             <span id ="stroop_m"> </span>
                             <button type="button" id="myButton" class="start-button">
-                                    Next Test
+                                    Next Task
                             </button>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                 var score = Math.round((average(it) - average(ct))*100)/100;
                 var msg = document.getElementById("stroop_m");
                 // console.log(msg)
-                msg.innerHTML = 'You have completed the stroop test! Your score is ' + score +'.'
+                msg.innerHTML = 'You have completed task 1!'
                 LogUI.logCustomMessage({
                         name: 'STROOP_SCORE',
                         metadata: {
