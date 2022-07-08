@@ -33,17 +33,17 @@ var stroop_data = [
     },  {
         "text": "Red",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "incong"
     },  {
         "text": "Blue",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "incong"
     },  {
         "text": "Green",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "incong"
     },  {
         "text": "Yellow",
@@ -94,17 +94,17 @@ var stroop_data = [
     },  {
         "text": "Red",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "incong"
     },  {
         "text": "Blue",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "incong"
     },  {
         "text": "Green",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "incong"
     },  {
         "text": "Yellow",
@@ -129,7 +129,7 @@ var stroop_data = [
     },     {
         "text": "Yellow",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "cong"
     }, 
     {
@@ -141,7 +141,7 @@ var stroop_data = [
     {
         "text": "Blue",
         "color": "blue",
-        "hex": "#000FF", 
+        "hex": "#0000FF", 
         "type": "cong"
     }, {
         "text": "Red",
@@ -151,7 +151,7 @@ var stroop_data = [
     },     {
         "text": "Yellow",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "cong"
     }, 
     {
@@ -163,7 +163,7 @@ var stroop_data = [
     {
         "text": "Blue",
         "color": "blue",
-        "hex": "#000FF", 
+        "hex": "#0000FF", 
         "type": "cong"
     }, {
         "text": "Red",
@@ -173,7 +173,7 @@ var stroop_data = [
     },     {
         "text": "Yellow",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "cong"
     }, 
     {
@@ -185,7 +185,7 @@ var stroop_data = [
     {
         "text": "Blue",
         "color": "blue",
-        "hex": "#000FF", 
+        "hex": "#0000FF", 
         "type": "cong"
     }, {
         "text": "Red",
@@ -195,7 +195,7 @@ var stroop_data = [
     },     {
         "text": "Yellow",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "cong"
     }, 
     {
@@ -207,7 +207,7 @@ var stroop_data = [
     {
         "text": "Blue",
         "color": "blue",
-        "hex": "#000FF", 
+        "hex": "#0000FF", 
         "type": "cong"
     }, {
         "text": "Red",
@@ -217,7 +217,7 @@ var stroop_data = [
     },     {
         "text": "Yellow",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "cong"
     }, 
     {
@@ -229,7 +229,7 @@ var stroop_data = [
     {
         "text": "Blue",
         "color": "blue",
-        "hex": "#000FF", 
+        "hex": "#0000FF", 
         "type": "cong"
     }, {
         "text": "Red",
@@ -239,7 +239,7 @@ var stroop_data = [
     },     {
         "text": "Yellow",
         "color": "yellow",
-        "hex": "#FFFF00", 
+        "hex": "#FFCC00", 
         "type": "cong"
     }, 
     {
@@ -251,7 +251,7 @@ var stroop_data = [
     {
         "text": "Blue",
         "color": "blue",
-        "hex": "#000FF", 
+        "hex": "#0000FF", 
         "type": "cong"
     } 
 ]

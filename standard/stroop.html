@@ -55,7 +55,7 @@
         <script type="text/javascript" src="js/logui.bundle.js"></script>
 
         <!-- The config object, specific for the page you are loading -->
-        <script type="text/javascript" src="js/logui-datext.js"></script>
+        <script type="text/javascript" src="js/logui-davoice.js"></script>
 
         <!-- The "Driving script" - that controls LogUI -->
         <script type="text/javascript" src="js/logui-driver.js"></script>
@@ -76,7 +76,7 @@
 
         var rem_task = (6-ca -ia);
         document.addEventListener("DOMContentLoaded", function(){
-            if (rem_task === 0){
+            if (rem_task == 0){
                 document.getElementById("stroop").style.display = "none";
                 document.getElementsByClassName("stroop_m")[0].style.visibility = "visible";;
                 
@@ -101,13 +101,7 @@
             }
         })
 
-        if (item.color == 'yellow') {
-            document.getElementById("heading").innerHTML = '<span style="color:#FFCC00;">' + item.text + ' </span>';
-        }
-        else {
-            document.getElementById("heading").innerHTML = '<span style="color:' + item.color + ' ;">' + item.text + ' </span>';
-        }
-        
+        document.getElementById("heading").innerHTML = '<span style="color:' + item.hex + ' ;">' + item.text + ' </span>';
         var counterText = "<i class='fa fa-stopwatch'></i> You have " +  rem_task  + " pages to go";
         document.getElementById("counter").innerHTML=counterText;
         function shuffle(a) {
