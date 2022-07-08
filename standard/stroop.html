@@ -74,7 +74,7 @@
         let it = JSON.parse(sessionStorage.getItem('incong_time')) || [];
         const average = (array) => array.reduce((a, b) => a + b) / array.length;
 
-        var rem_task = (2-ca -ia);
+        var rem_task = (6-ca -ia);
         document.addEventListener("DOMContentLoaded", function(){
             if (rem_task == 0){
                 document.getElementById("stroop").style.display = "none";
@@ -101,12 +101,7 @@
             }
         })
 
-        if (item.color == 'yellow') {
-            document.getElementById("heading").innerHTML = '<span style="color:#FFCC00;">' + item.text + ' </span>';
-        }
-        else {
-            document.getElementById("heading").innerHTML = '<span style="color:' + item.color + ' ;">' + item.text + ' </span>';
-        }
+        document.getElementById("heading").innerHTML = '<span style="color:' + item.hex + ' ;">' + item.text + ' </span>';
         var counterText = "<i class='fa fa-stopwatch'></i> You have " +  rem_task  + " pages to go";
         document.getElementById("counter").innerHTML=counterText;
         function shuffle(a) {

@@ -131,7 +131,8 @@ window.jsPsych = (function() {
         opts.display_element = display;
       }
     }
-    opts.display_element.innerHTML = '<div class="jspsych-content-wrapper"><div id="jspsych-content"></div></div>';
+    opts.display_element.innerHTML = '<div class="jspsych-content-wrapper"><header><div><img src="img/logo.svg" alt="Search" /><span class="stage">Task 2</span></div></header><div id="jspsych-content"></div></div>';
+    // opts.display_element.innerHTML += '';
     DOM_container = opts.display_element;
     DOM_target = document.querySelector('#jspsych-content');
 
@@ -2380,11 +2381,11 @@ jsPsych.pluginAPI = (function() {
    *
    */
   module.hardware = function hardware(mess){
-	  //since Chrome extension content-scripts do not share the javascript environment with the page script that loaded jspsych,
-	  //we will need to use hacky methods like communicating through DOM events.
-	  var jspsychEvt = new CustomEvent('jspsych', {detail: mess});
-	  document.dispatchEvent(jspsychEvt);
-	  //And voila! it will be the job of the content script injected by the extension to listen for the event and do the appropriate actions.
+      //since Chrome extension content-scripts do not share the javascript environment with the page script that loaded jspsych,
+      //we will need to use hacky methods like communicating through DOM events.
+      var jspsychEvt = new CustomEvent('jspsych', {detail: mess});
+      document.dispatchEvent(jspsychEvt);
+      //And voila! it will be the job of the content script injected by the extension to listen for the event and do the appropriate actions.
   };
 
   /** {boolean} Indicates whether this instance of jspsych has opened a hardware connection through our browser extension */
@@ -2394,7 +2395,7 @@ jsPsych.pluginAPI = (function() {
   //it might be useful to open up a line of communication from the extension back to this page script,
   //again, this will have to pass through DOM events. For now speed is of no concern so I will use jQuery
   document.addEventListener("jspsych-activate", function(evt){
-	  module.hardwareConnected = true;
+      module.hardwareConnected = true;
   })
 
 
@@ -2405,31 +2406,31 @@ jsPsych.pluginAPI = (function() {
 // methods used in multiple modules //
 jsPsych.utils = (function() {
 
-	var module = {};
+    var module = {};
 
-	module.flatten = function(arr, out) {
-		out = (typeof out === 'undefined') ? [] : out;
-		for (var i = 0; i < arr.length; i++) {
-			if (Array.isArray(arr[i])) {
-				module.flatten(arr[i], out);
-			} else {
-				out.push(arr[i]);
-			}
-		}
-		return out;
-	}
+    module.flatten = function(arr, out) {
+        out = (typeof out === 'undefined') ? [] : out;
+        for (var i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                module.flatten(arr[i], out);
+            } else {
+                out.push(arr[i]);
+            }
+        }
+        return out;
+    }
 
-	module.unique = function(arr) {
-		var out = [];
-		for (var i = 0; i < arr.length; i++) {
-			if (arr.indexOf(arr[i]) == i) {
-				out.push(arr[i]);
-			}
-		}
-		return out;
-	}
+    module.unique = function(arr) {
+        var out = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr.indexOf(arr[i]) == i) {
+                out.push(arr[i]);
+            }
+        }
+        return out;
+    }
 
-	module.deepCopy = function(obj) {
+    module.deepCopy = function(obj) {
     if(!obj) return obj;
     var out;
     if(Array.isArray(obj)){
@@ -2451,7 +2452,7 @@ jsPsych.utils = (function() {
     }
   }
 
-	return module;
+    return module;
 })();
 
 // polyfill for Object.assign to support IE

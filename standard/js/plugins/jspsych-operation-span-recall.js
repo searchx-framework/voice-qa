@@ -118,9 +118,9 @@ for (var i=0; i<4 ; i++){
   }
 };
 
-var paper_size = [(3*(trial.size_cells+30)), ((4*(trial.size_cells+20))+100)];
+var paper_size = [(4*(trial.size_cells+30)), ((4*(trial.size_cells+20))+100)];
 
-display_element.innerHTML = '<div id="jspsych-html-button-response-btngroup" style= "position: relative; width:' + paper_size[0] + 'px; height:' + paper_size[1] + 'px"></div>';
+display_element.innerHTML = '<div id="jspsych-html-button-response-btngroup" style= "margin: auto; position: relative; width:' + paper_size[0] + 'px; height:' + paper_size[1] + 'px"></div>';
 var paper = display_element.querySelector("#jspsych-html-button-response-btngroup");
 
 paper.innerHTML += '<div class="recall-space" style="position: absolute; top:'+ 0 +'px; left:'+(paper_size[0]/2-310)+'px; width:600px; height:64px" id="recall_space">'+ recalledGrid+'</div>';
@@ -134,9 +134,9 @@ for (var i = 0; i < matrix.length; i++) {
   }
 
 
-  display_element.innerHTML += '<div class="jspsych-btn-numpad" style="display: inline-block; margin:'+10+' '+2+'" id="jspsych-html-button-response-button-clear" onclick="clearSpace(this)">Backspace</div>';
+  display_element.innerHTML += '<button class="jspsych-btn-numpad" style="display: inline-block; margin: 0 140 0 auto" id="jspsych-html-button-response-button-clear" onclick="clearSpace(this)">Backspace</button>';
 
-  display_element.innerHTML += '<div class="jspsych-btn-numpad" style="display: inline-block; margin:'+10+' '+140+'" id="jspsych-html-button-response-button">Continue</div>';
+  display_element.innerHTML += '<button class="jspsych-btn-numpad" style="display: inline-block; margin: 0 30 0 0" id="jspsych-html-button-response-button">Continue</button>';
 
 
 var start_time = Date.now();
