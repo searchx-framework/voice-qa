@@ -38,6 +38,14 @@ header > div {
         filter: drop-shadow(0 0 15px rgba(151, 151, 151, 0.75));
     }
 
+    header > div > span.stage {
+        display: inline-block;
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 42px;
+        margin-left: 20px;
+    }
+
     header > div > form {
         display: inline-block;
         position: relative;
