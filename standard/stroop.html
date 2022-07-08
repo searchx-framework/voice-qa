@@ -35,22 +35,11 @@
                         <div class="stroop" id="stroop">
 
                             <span id="heading"> </span>
-                            <div >
-                                <!-- <input type="radio" id="col_0" name="stroop" >
-                                <label id="l_0"></label> -->
-                                1. <button class="stroopButton" id="l_0" type="submit"></button>
-                            </div>
-                                
-                            <div>
-                                2. <button class="stroopButton" id="l_1" type="submit"></button>
-                            </div>
-                        
-                            <div>
-                                3. <button class="stroopButton" id="l_2" type="submit"></button>
-                            </div>
-                            <div>
-                                4. <button class="stroopButton" id="l_3" type="submit"></button>
-                            </div>
+                            <span id="prompt">What <strong>colour</strong> is the word above shown in?</span>
+                            <button class="stroopButton" id="l_0" type="submit"></button>
+                            <button class="stroopButton" id="l_1" type="submit"></button>
+                            <button class="stroopButton" id="l_2" type="submit"></button>
+                            <button class="stroopButton" id="l_3" type="submit"></button>
                         </div>
                         <div class="stroop_m">
                             <span id ="stroop_m"> </span>
@@ -94,7 +83,7 @@
                 var score = Math.round((average(it) - average(ct))*100)/100;
                 var msg = document.getElementById("stroop_m");
                 // console.log(msg)
-                msg.innerHTML = 'You have completed task 1!'
+                msg.innerHTML = 'Task 1 has been completed. Click the button below to proceed to the second task.'
                 LogUI.logCustomMessage({
                         name: 'STROOP_SCORE',
                         metadata: {
@@ -112,7 +101,13 @@
             }
         })
 
-        document.getElementById("heading").innerHTML = '<h3 style="color:' + item.color + ' ;">' + item.text + ' </h3>';
+        if (item.color == 'yellow') {
+            document.getElementById("heading").innerHTML = '<span style="color: #FFFF00; background-color: #000; padding: 10px;">' + item.text + ' </span>';
+        }
+        else {
+            document.getElementById("heading").innerHTML = '<span style="color:' + item.color + ' ;">' + item.text + ' </span>';
+        }
+        
         var counterText = "<i class='fa fa-stopwatch'></i> You have " +  rem_task  + " pages to go";
         document.getElementById("counter").innerHTML=counterText;
         function shuffle(a) {
