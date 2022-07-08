@@ -131,7 +131,8 @@ window.jsPsych = (function() {
           opts.display_element = display;
         }
       }
-      opts.display_element.innerHTML = '<div class="jspsych-content-wrapper"><div id="jspsych-content"></div></div>';
+      opts.display_element.innerHTML = '<div class="jspsych-content-wrapper"><header><div><img src="img/logo.svg" alt="Search" /><span class="stage">Task 2</span></div></header><div id="jspsych-content"></div></div>';
+      // opts.display_element.innerHTML += '';
       DOM_container = opts.display_element;
       DOM_target = document.querySelector('#jspsych-content');
   
