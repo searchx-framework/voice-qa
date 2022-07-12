@@ -57,9 +57,9 @@
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
  
  .jspsych-display-element {
-   font-family: 'Open Sans', 'Arial', sans-serif;
+   font-family: 'Arial', 'Helvetica', sans-serif;
    font-size: 18px;
-   line-height: 1.6em;
+   line-height: 1.15;
  }
  
  .jspsych-operation-span-recall{
@@ -69,7 +69,7 @@
          border:3px solid #000000;
      font-size: 32px;
      font-weight: 400;
-     font-family: 'Open Sans', 'Arial', sans-serif;
+     font-family: 'Arial', 'Helvetica', sans-serif;
      cursor: pointer;
      text-align: center;
      vertical-align: middle;
@@ -83,7 +83,7 @@
            height:64px;
            border:3px solid #000000;
        font-weight: 400;
-       font-family: 'Open Sans', 'Arial', sans-serif;
+       font-family: 'Arial', 'Helvetica', sans-serif;
        cursor: pointer;
        text-align: center;
        vertical-align: middle;
@@ -94,7 +94,7 @@
  /* Form elements like input fields and buttons */
  
  .jspsych-display-element input[type="text"] {
-   font-family: 'Open Sans', 'Arial', sans-serif;
+   font-family: 'Arial', 'Helvetica', sans-serif;
    font-size: 14px;
  }
  
@@ -182,7 +182,7 @@
    border:0px solid #000000;
    font-size: 35px;
    font-weight: 400;
-   font-family: 'Open Sans', 'Arial', sans-serif;
+   font-family: 'Arial', 'Helvetica', sans-serif;
    text-align: center;
    vertical-align: middle;
    line-height: 64px;
