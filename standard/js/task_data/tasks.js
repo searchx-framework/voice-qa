@@ -32,7 +32,7 @@ var data = [
     },
     {
         "id": "vs_5",
-        "query": "What is medicare&#8217;s definition of mechanical ventilation?",
+        "query": "What is medicare's definition of mechanical ventilation?",
         "answer": [ "Mechanical ventilation is the medical term for artificial ventilation where mechanical means is used to assist or replace spontaneous breathing.",
         "Situations that may call for a tracheostomy include: Medical conditions that require the use of a breathing machine (ventilator) for an extended period, usually more than one or two weeks.",
         "Non-invasive pressure-support ventilation (NIPSV), a method of assisting a patient&#x2019;s respiration without intubation, was first reported in the 18th century."],
