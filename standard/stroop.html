@@ -55,7 +55,7 @@
         <script type="text/javascript" src="js/logui.bundle.js"></script>
 
         <!-- The config object, specific for the page you are loading -->
-        <script type="text/javascript" src="js/logui-davoice.js"></script>
+        <script type="text/javascript" src="js/logui-datext.js"></script>
 
         <!-- The "Driving script" - that controls LogUI -->
         <script type="text/javascript" src="js/logui-driver.js"></script>
@@ -83,7 +83,7 @@
                 var score = Math.round((average(it) - average(ct))*100)/100;
                 var msg = document.getElementById("stroop_m");
                 // console.log(msg)
-                msg.innerHTML = 'Task 1 has been completed. Click the button below to proceed to the second task.'
+                msg.innerHTML = 'Task 1 has been completed. Click the button below to proceed to Task 2.'
                 LogUI.logCustomMessage({
                         name: 'STROOP_SCORE',
                         metadata: {
@@ -115,7 +115,7 @@
             return a;
         }
         var colors = ["red", "green", "yellow", "blue"]
-        colors = shuffle(colors)
+        // colors = shuffle(colors)
         for (let i = 0; i <=3; i++) {
             var cid = "col_" + i;
             var lid = "l_" + i;

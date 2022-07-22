@@ -40,38 +40,39 @@
                     About 3,200,000,000 results (0.80 seconds)
                 </div> -->
                 <div class="grid-container">
-                    <div>
-                        <img class="overview" src="img/Overview2.png" />
-                        <ul class="test-explainer">
-                            <li><strong>For this first task, you will be shown several pages with a colour name presented at the top. Each name is written in a colour. You have to identify the <u>colour in which the name is written</u>, not what the name is.</strong></li>
+                        <div>
+                                <h2 style="text-align: center;">Welcome to Task 1!</h2>
+                            <img class="overview" src="img/Overview2.png" />
+                            <ul class="test-explainer">
+                                <li><strong>For this first task, you will be shown several pages with a string presented at the top. Each string is written in a colour. You have to identify the <u>colour in which the string is written</u>, not what the string says.</strong></li>
 
-                            <li>Take a look at the example screenshot below. At the top, you see a name (e.g., <em>Red</em>, marked 1) written in the colour <span style="color: blue;">blue</span>. Below it, there are four options (marked 2).</li>
+                                <li>Take a look at the example screenshot below. At the top, you see a string (e.g., <em>Red</em>, marked 1) written in the colour <span style="color: blue;">blue</span>. Below it, there are four options (marked 2).</li>
 
-                            <li>
-                                <img src="img/stroop_incong.png" />
-                            </li>
+                                <li>
+                                    <img src="img/stroop_incong.png" />
+                                </li>
 
-                            <li><strong>For this example, you should select blue from the list, as the colour the name is presented in is <span style="color: blue;">blue</span> (although the name is <em>Red</em>).</strong> Once you select the correct option, a <strong>Next</strong> button will appear, taking you to the next step.</li>
+                                <li><strong>For this example, you should select blue from the list, as the colour the string is presented in is <span style="color: blue;">blue</span> (although the string says <em>Red</em>).</strong> Once you select the correct option, a <strong>Next</strong> button will appear, taking you to the next step.</li>
 
-                            <li>
-                                <hr />
-                            </li>
+                                <li>
+                                    <hr />
+                                </li>
 
-                            <li><strong>A total of 48 pages will be presented to you. Complete them as fast as you can.</strong></li>
-                            <li><strong><u>Please do not undertake another activity while performing this task. You risk being disqualified from this study if you do.</u></strong></li>
+                                <li><strong>A total of 48 pages will be presented to you. Complete them as fast as you can.</strong></li>
+                                <li><strong><u>Please do not undertake another activity while performing this task. You risk being disqualified from this study if you do.</u></strong></li>
 
-                            <li>
-                                <hr />
-                            </li>
+                                <li>
+                                    <hr />
+                                </li>
 
-                            <li>When you are ready to begin, click the <strong>Start</strong> button below to begin.
-                                <button type="button" id="myButton" class="start-button">
-                                        Start
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    </div>
+                                <li>When you are ready to begin, click the <strong>Start</strong> button below to begin.
+                                    <button type="button" id="myButton" class="start-button">
+                                            Start
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
 
                     </div> 
                 </main>
@@ -91,7 +92,7 @@
         <script type="text/javascript" src="js/logui.bundle.js"></script>
 
          <!-- The config object, specific for the page you are loading -->
-         <script type="text/javascript" src="js/logui-davoice.js"></script>
+         <script type="text/javascript" src="js/logui-datext.js"></script>
  
          <!-- The "Driving script" - that controls LogUI -->
          <script type="text/javascript" src="js/logui-driver.js"></script>
@@ -123,7 +124,7 @@
             }
         </script>
         <!-- <script>
-            console.log("temp_d", temp_d)
+            // console.log("temp_d", temp_d)
             var ospan = 0;
             var math_acc = 0;
             temp_d.forEach((element, idx) => {

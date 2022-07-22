@@ -21,7 +21,7 @@
   <script type="text/javascript" src="js/logui.bundle.js"></script>
 
   <!-- The config object, specific for the page you are loading -->
-  <script type="text/javascript" src="js/logui-davoice.js"></script>
+  <script type="text/javascript" src="js/logui-datext.js"></script>
 
   <!-- The "Driving script" - that controls LogUI -->
   <script type="text/javascript" src="js/logui-driver.js"></script>
@@ -118,9 +118,10 @@ readInstruct = function(){
 var instructions = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<img style="width: 650px; height: auto; margin-top: 10px;" src="img/Overview3.png"></img>'
-      pageOne += '<div style="font-size:20px;"><br>Welcome to the second task! <br><br>This task has two parts: <br>(1) Letter memorization <br>(2) Math problem solving<br><br><br></div>'
-      pageTwo = '<div style="font-size:20px;">We will first practice <b>LETTER MEMORIZATION</b>.<br><br>A sequence of letters will appear on the screen one at a time (around 3 to 6 in a trial).<br>Try to remember each letter in the order presented.<br><br>After letter presentation, you will see a screen listing 16 possible letters.<br>Your task is to select each letter that was presented in its correct presentation order. <br><br>Use the mouse to select the appropriate letters <br>If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><b>Remember, it is important that you select the letters in the order that you saw them.</b><br> So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.<br><br>Press "Next" for practice trials.<br><br></div>'
+      pageOne = '<h2 style="font-size:1.5em">Welcome to Task 2!</h2><img style="width: 650px; height: auto; margin-top: 10px;" src="img/Overview3.png"></img>'
+      pageOne += '<div ><br> This task consists of two sub-tasks: <br> 1. Letter Memorization and 2. Math Problem Solving <br><br><hr style="width:50%"> There will be four rounds in this task: <br> <ul style="margin:auto; width: 500px; list-style-type:none;"> <li> <b>Round 1</b>: practising letter memorization sub-task. </li> <li> <b>Round 2</b>: practising math problem solving sub-task. </li> <li> <b>Round 3</b>: practising both sub-tasks together. </li> <li><b>Round 4</b>: main round for Task 2. </li> </ul><br>'
+      // pageTwo = '<div style="font-size:20px;"><b>Round 1</b> <br>We will first practice <b>Letter Memorization</b>.<br><br>A sequence of letters will appear on the screen one at a time (around 3 to 6 in a trial).<br>Try to remember each letter in the order presented.<br><br>After letter presentation, you will see a screen listing 16 possible letters.<br>Your task is to select each letter that was presented in its correct presentation order. <br><br>Use the mouse to select the appropriate letters <br>If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><b>Remember, it is important that you select the letters in the order that you saw them.</b><br> So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.<br><br>Press "Next" to start the practice round.<br><br></div>'
+      pageTwo = '<div ><b>Round 1</b> <br>We will first practice <b>Letter Memorization</b>.<br> <br><b>What?</b><br>In this sub-task you are asked to memorize letters.<br>On a page you are shown between 3 and 6 letters one after the other. Remember the letters and the order in which they appear.<br>On the next page you will see a grid of 16 letters. You are asked to select the letters you have just seen in the <b>correct order.</b><br><br><hr style="width:50%"><b>How?</b><br>Use the mouse to select the letters. If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><hr style="width:50%"><b>Note!</b><br>It is important that you select the letters in the order that you saw them. <br>So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.'
       return [pageOne, pageTwo]//, pageThree]
     },
     allow_backward: false,
@@ -131,7 +132,7 @@ var instructions = {
   var instructions2 = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;">You will next practice <b>MATH PROBLEM SOLVING</b>.<br><br>A simple math equation will appear on the screen, like this:<br>3 + 4 = 7<br>Your task is to solve the math problem and determine if the answer provided to it is correct.<br><br>For example, if you see the following problem:<br>2 + 3 = 5<br>you should click the <b>"True"</b> button because 2 and 3 added together equals 5.<br><br>If you see the following problem:<br>2 + 3 = 6<br>you should click the <b>"False"</b> button because 2 and 3 added together DOES NOT equal 6.<br><br><br>Press "Next" to start practicing math problem solving.<br><br></div>'
+      pageOne = '<div ><b>Round 2</b> <br>We will next practice <b>Math Problem Solving</b>.<br><br><b>What?</b><br>A simple math equation will be shown on a page like this:<br>3 + 4 = 7<br>Your have to solve the math problem and determine if the answer provided to it is correct.<br><br><hr style="width:50%"> <b>How?</b><br>If you see the following problem:<br>2 + 3 = 5<br>you should click the <b>"True"</b> button because 2 and 3 added together equals 5.<br><br>If you see the following problem:<br>2 + 3 = 6<br>you should click the <b>"False"</b> button because 2 and 3 added together DOES NOT equal 6.<br><br><br>Press "Next" to start practicing math problem solving.<br><br></div>'
       return [pageOne]
     },
     allow_backward: false,
@@ -142,9 +143,8 @@ var instructions = {
   var instructions3 = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;">We will now practice the two tasks together.<br><br>In the next practice set, you will first be presented with a letter.<br>Try and remember that letter.<br>After the letter dissapears, you will be provided with a math problem<br>and you have to judge if the answer provided is true or false.<br><br>It is important to work <b>QUICKLY</b> and <b>ACCURATELY</b> on the math problem.<br>Each math problem will be presented for only 6 seconds.<br><br></div>'
-      pageTwo = '<div style="font-size:20px;">After the math problem, you will be shown another letter to remember,<br>which will be followed by another math problem.<br><br>Therefore, letter presentations and math problems will alternate.<br>After 3 to 6 letters have been presented, the recall screen will appear.<br>Use the mouse to select the presented letters in their correct order.<br><br><br>Press "Next" to start practice rounds.<br><br></div>'
-      return [pageOne, pageTwo]
+      pageOne = '<div ><b>Round 3</b> <br>We will now practice the two sub-tasks together.<br><br> <b>What?</b><br>In the next practice round, you will first be presented with a letter. Try and remember that letter.<br>After the letter disappears, you will be provided with a math problem<br>and you have to judge if the answer provided is true or false.<br><br> <hr style="width:50%"> After the math problem, you will be shown another letter to remember,<br>which will be followed by another math problem.<br><br>Therefore, letter presentations and math problems will alternate.<br>After 3 to 6 letters have been presented, the grid with 16 letters will be shown. <br><br><hr style="width:50%"><b>How?</b><br>Use the mouse to select the presented letters in their <b>correct order</b>.<br><br><hr style="width:50%"><b>Note!</b><br>It is important to work <b>QUICKLY</b> and <b>ACCURATELY</b> on the math problem.<br>Each math problem will be presented for only 6 seconds.<br><br><br>Press "Next” to start practice round 3.<br><br></div>'
+      return [pageOne]
     },
     allow_backward: false,
     button_label_next: "Next",
@@ -157,7 +157,7 @@ var instructions = {
   var instructions4 = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<div style="font-size:20px;">We have finished with the practice trials.<br><br><b>We will now start with the main trials.</b><br> There will be 8 trials (of varying sizes) in total. Proceed only if you have understood the task. <br><br> Please do not write down the letters and perform the task only using your memory. <br>Press "Practice Again" to read the instructions and go through the tutorial again.<br> <br>Press "Next" to start the main trials.<br><br></div>'
+      pageOne = '<div ><b>Round 4</b> <br><br>We have finished with the practice rounds.<br> <b>We will now start with the main round.</b><br><br> <b>What?</b><br>The main round will be similar to round 3 that you just practised. <br> The letter memorisation and math problem will appear alternatively. <br> You will have to perform this round 8 times. Each time you will see between 3 to 6 letters and math problems. <br>  Proceed only if you have understood the task. <br><br><hr style="width:50%"><b>Note!</b><br> Please do not write down the letters and perform the task only using your memory. <br> <br><hr style="width:50%">Press "Practice Again" to read the instructions and go through the tutorial again.<br>Press "Next" to start the main round.<br><br></div>'
       pageOne += '<button class="jspsych-btn" style="display: inline-block; width: 200px; margin:'+10+' '+2+'" id="jspsych-html-button-response-button-clear" onclick="readInstruct(this)">Practice Again</button>';
       return [pageOne]
     },
@@ -255,14 +255,14 @@ var recall = {
 var feedback = {
     type: 'instructions',
     pages: function(){
-      pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of "+nLetters+"</font> letters in their correct order.</b><br><br>"
+      pageOne = "<div><b>You recalled <font color='blue'>"+nLettersRecalled+" out of "+nLetters+"</font> letters in their correct order.</b><br><br>"
       if (n>nPracticeTrials){
         pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of "+nLetters+"</font> math problems accurately.<br><br></div>"
       }
       return [pageOne]
     },
     allow_backward: false,
-    button_label_next: "Next Trial",
+    button_label_next: "Next",
     show_clickable_nav: true,
     on_finish: function(){
       nMathAcc = 0
@@ -294,7 +294,7 @@ var feedback = {
     pages: function(){
       var s = ""
       s += '<img style="width: 650px; height: auto; margin-top: 10px; display: block" src="img/Overview3.png"></img>'
-      s += "<div style='font-size:20px;'>Welcome to the second task, click the Continue button to read the instructions</div>"
+      s += "<div style='font-size:20px;'>Welcome to Task 2, click the Continue button to read the instructions</div>"
       return [s]
     },
     allow_backward: false,
@@ -327,7 +327,7 @@ var feedback = {
      sessionStorage.setItem("ospan-result", p);
      var final_math_acc = 0;
      JSON.parse(p).forEach((element, idx) => {
-          if (idx>11){
+          if (idx>8){
             if (element.trial_type === "html-button-operationspan"){
               final_math_acc += parseInt(element.accuracy);   
             }
@@ -365,8 +365,8 @@ var feedback = {
   var conclusion = {
     type: 'html-button-operationspan',
     stimulus: function(){
-      text = '<div style="font-size:20px;">You have completed task 2!<br><br></div>';  
-      text += '<div style="font-size:20px;">Click this button to go to Task 3 (the relevance judgement task).</div>'
+      text = '<div>You have completed Task 2!<br><br></div>';  
+      text += '<div>Click this button to go to Task 3.</div>'
       return text
   },
     choices: jsPsych.NO_KEYS,

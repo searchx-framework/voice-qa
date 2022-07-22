@@ -1,10 +1,10 @@
 /* Organic Result (including subresults, which are indented) */
 div.relevance{
-    height: 100px;
-    visibility: hidden;
+    height: 100px
 }
-
-
+/* div.confidence{
+    position: absolute;
+} */
 div.stroop span{
     font-size: xxx-large;
     text-align: center;
@@ -25,14 +25,20 @@ div.stroop div{
     /* text-align: center; */
     font-size: xx-large;
 }
-/* div.confidence{
-    position: absolute;
-} */
-
 div.relevance div {
     /* float: left; */
     list-style-type: none;
     padding: 5px;
+    /* display: block;
+    font-size: 14px;
+    color: #202124; */
+}
+
+
+div.relevance ul li {
+    float: left;
+    list-style-type: none;
+    padding: 10px;
     /* display: block;
     font-size: 14px;
     color: #202124; */
@@ -45,6 +51,7 @@ div.confidence ul li {
     font-size: 14px;
     color: #202124; */
 }
+
 
 
     
@@ -180,8 +187,60 @@ div.answer-card > ul.also {
         text-overflow: ellipsis;
     }
 
-button.playButton, button.pauseButton, button.restartButton {
-    padding: 10px 15px 10px 15px;
+    .speech-bubble {
+        position: relative;
+        background: #00aabb;
+        border-radius: .4em;
+        /* padding: 10px 10px; */
+        color: white;
+        text-align: center;
+        font-weight: bold;
+    }
+    .speech-bubble p {
+        border-radius: 1.15rem;
+        line-height: 1.25;
+        padding: 0.5rem .875rem;
+        position: relative;
+        word-wrap: break-word;
+      }
+    p.question::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 18px solid transparent;
+        border-left-color: #00aabb;
+        border-right: 0;
+        border-top: 0;
+        margin-top: -9px;
+        margin-right: -18px;
+    }
+
+    p.answer::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 12px solid transparent;
+        border-right-color: #00aabb;
+        border-left: 0;
+        border-top: 0;
+        margin-top: -6px;
+        margin-left: -12px;
+    }
+
+/* New components */
+
+span#answer {
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #202124;
 }
 
 span#heading {
@@ -240,15 +299,24 @@ button.stroopButton{
    color: #1ec279;
   }
 
+  /* Test bullet points */
+
   ul.test-explainer {
     list-style-type: none;
     list-style-position: outside;
     margin: 0 0 0 0;
     padding: 0;
+    font-size: 18px;
+    text-align: center;
   }
 
   ul.test-explainer li {
     margin-top: 20px;
+  }
+  ul.test-explainer li ul{
+    list-style-position: inside;
+    text-align: center;
+    list-style-type: square;
   }
 
   ul.test-explainer li > img {
