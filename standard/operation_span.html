@@ -118,7 +118,7 @@ readInstruct = function(){
 var instructions = {
     type: 'instructions',
     pages: function(){
-      pageOne = '<h2>Welcome to Task 2!</h2><img style="width: 650px; height: auto; margin-top: 10px;" src="img/Overview3.png"></img>'
+      pageOne = '<h2 style="font-size:1.5em">Welcome to Task 2!</h2><img style="width: 650px; height: auto; margin-top: 10px;" src="img/Overview3.png"></img>'
       pageOne += '<div ><br> This task consists of two sub-tasks: <br> 1. Letter Memorization and 2. Math Problem Solving <br><br><hr style="width:50%"> There will be four rounds in this task: <br> <ul style="margin:auto; width: 500px; list-style-type:none;"> <li> <b>Round 1</b>: practising letter memorization sub-task. </li> <li> <b>Round 2</b>: practising math problem solving sub-task. </li> <li> <b>Round 3</b>: practising both sub-tasks together. </li> <li><b>Round 4</b>: main round for Task 2. </li> </ul><br>'
       // pageTwo = '<div style="font-size:20px;"><b>Round 1</b> <br>We will first practice <b>Letter Memorization</b>.<br><br>A sequence of letters will appear on the screen one at a time (around 3 to 6 in a trial).<br>Try to remember each letter in the order presented.<br><br>After letter presentation, you will see a screen listing 16 possible letters.<br>Your task is to select each letter that was presented in its correct presentation order. <br><br>Use the mouse to select the appropriate letters <br>If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><b>Remember, it is important that you select the letters in the order that you saw them.</b><br> So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.<br><br>Press "Next" to start the practice round.<br><br></div>'
       pageTwo = '<div ><b>Round 1</b> <br>We will first practice <b>Letter Memorization</b>.<br> <br><b>What?</b><br>In this sub-task you are asked to memorize letters.<br>On a page you are shown between 3 and 6 letters one after the other. Remember the letters and the order in which they appear.<br>On the next page you will see a grid of 16 letters. You are asked to select the letters you have just seen in the <b>correct order.</b><br><br><hr style="width:50%"><b>How?</b><br>Use the mouse to select the letters. If you make a mistake use the provided "Backspace" button to clear your last response. <br><br><hr style="width:50%"><b>Note!</b><br>It is important that you select the letters in the order that you saw them. <br>So if you forget one of the letters, guess the best you can for that one, and select the rest in their correct order.'
@@ -327,7 +327,7 @@ var feedback = {
      sessionStorage.setItem("ospan-result", p);
      var final_math_acc = 0;
      JSON.parse(p).forEach((element, idx) => {
-          if (idx>11){
+          if (idx>8){
             if (element.trial_type === "html-button-operationspan"){
               final_math_acc += parseInt(element.accuracy);   
             }

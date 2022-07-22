@@ -307,10 +307,16 @@ button.stroopButton{
     margin: 0 0 0 0;
     padding: 0;
     font-size: 18px;
+    text-align: center;
   }
 
   ul.test-explainer li {
     margin-top: 20px;
+  }
+  ul.test-explainer li ul{
+    list-style-position: inside;
+    text-align: center;
+    list-style-type: square;
   }
 
   ul.test-explainer li > img {
