@@ -100,8 +100,10 @@
                 }
             }
         })
-
-        document.getElementById("heading").innerHTML = '<span style="color:' + item.hex + ' ;">' + item.text + ' </span>';
+        if (item) {
+            document.getElementById("heading").innerHTML = '<span style="color:' + item.hex + ' ;">' + item.text + ' </span>';
+        }
+        
         var counterText = "<i class='fa fa-stopwatch'></i> You have " +  rem_task  + " pages to go";
         document.getElementById("counter").innerHTML=counterText;
         function shuffle(a) {
