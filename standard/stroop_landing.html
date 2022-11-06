@@ -44,15 +44,15 @@
                                 <h2 style="text-align: center;">Welcome to Task 1!</h2>
                             <img class="overview" src="img/Overview2.png" />
                             <ul class="test-explainer">
-                                <li><strong>For this first task, you will be shown several pages with a string presented at the top. Each string is written in a colour. You have to identify the <u>colour in which the string is written</u>, not what the string says.</strong></li>
+                                <li><strong>For this first task, you will be shown several pages with a word presented at the top. Each word is written in a colour. You have to identify the <u>colour in which the word is written</u>, not what the word says.</strong></li>
 
-                                <li>Take a look at the example screenshot below. At the top, you see a string (e.g., <em>Red</em>, marked 1) written in the colour <span style="color: blue;">blue</span>. Below it, there are four options (marked 2).</li>
+                                <li>Take a look at the example screenshot below. At the top, you see a word (e.g., <em>Red</em>, marked 1) written in the colour <span style="color: blue;">blue</span>. Below it, there are four options (marked 2).</li>
 
                                 <li>
                                     <img src="img/stroop_incong.png" />
                                 </li>
 
-                                <li><strong>For this example, you should select blue from the list, as the colour the string is presented in is <span style="color: blue;">blue</span> (although the string says <em>Red</em>).</strong> Once you select the correct option, a <strong>Next</strong> button will appear, taking you to the next step.</li>
+                                <li><strong>For this example, you should select blue from the list, as the colour the word is presented in is <span style="color: blue;">blue</span> (although the word says <em>Red</em>).</strong> Once you select the correct option, a <strong>Next</strong> button will appear, taking you to the next step.</li>
 
                                 <li>
                                     <hr />
@@ -84,7 +84,7 @@
             sessionStorage.setItem('mode', 'voice')
             var a = location.href; 
             var b = a.split("prolificID=").pop()
-            // var c = b.substring(b.indexOf("=")+1);
+            // var c = b.subword(b.indexOf("=")+1);
             sessionStorage.setItem('prolific-id', b)
         </script>
         <!-- <script type="text/javascript" src="js/task_data/temp.js"></script> -->
@@ -106,11 +106,11 @@
                 //      name: 'NEXT_BUTTON',
                 //  });
                 var trials = Array.from(Array(48).keys());
-                sessionStorage.setItem('trials', JSON.stringify(trials))
+                sessionStorage.setItem('trials', JSON.wordify(trials))
                 sessionStorage.setItem('cong_acc', 0)
                 sessionStorage.setItem('incong_acc', 0)
-                sessionStorage.setItem('cong_time', JSON.stringify([]))
-                sessionStorage.setItem('incong_time', JSON.stringify([]))
+                sessionStorage.setItem('cong_time', JSON.wordify([]))
+                sessionStorage.setItem('incong_time', JSON.wordify([]))
                 // sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')
                 // var pages = JSON.parse(localStorage.getItem('pages'))
