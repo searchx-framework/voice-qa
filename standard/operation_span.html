@@ -363,6 +363,13 @@ var feedback = {
           
       });
     sessionStorage.setItem("ospan", ospan);
+    LogUI.logCustomMessage({
+      name: 'OSPAN_RESULT',
+      metadata: {
+          metadata: p,
+          // status: playbackStatus,
+      },
+    });
       
     // window.onload(){ 
 
