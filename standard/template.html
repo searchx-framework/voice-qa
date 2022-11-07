@@ -63,15 +63,6 @@
                                                 <button onclick="pauseAudio()" type="button" class="pauseButton"><i class="fas fa-pause"></i>&nbsp;Pause Answer </button>
                                                 <button onclick="restartAudio()" type="button" class="restartButton"><i class="fas fa-redo"></i>&nbsp; Restart Answer </button>
                                             </span>
-                                        <!-- <span class="answer-supplementary">
-                                                <b>Check out the following martial arts disciplines that are easy to learn:</b>
-                                                <ol>
-                                                    <li> Karate. Karate is a diverse martial arts discipline that may be learned from any of three angles: as a form of self-defense, or as an art. ...</li>
-                                                    <li>Basic Boxing. New martial arts students might explore basic boxing. ...</li>
-                                                    <li>Muay Thai. ...</li>
-                                                    <li>Jiu-Jitsu. ...</li>
-                                                </ol>
-                                        </span> -->
 
                                     </div>
                                    
@@ -154,10 +145,10 @@
             function updateTime() {
                 var hid = document.getElementsByClassName("relevance");
                 // Emulates jQuery $(element).is(':hidden');
-                if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0 && x.currentTime > (x.duration)/2) {
+                if( x.currentTime > (x.duration)/2) {
                     hid[0].style.visibility = "visible";
                 }
-                // console.log(x.currentTime)
+                // console.log(x.duration, x.currentTime)
             }
             
             function playAudio() { 
