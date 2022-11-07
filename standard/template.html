@@ -147,13 +147,6 @@
                  // console.log("LOG", pages[mynum_index] + '/template.html')
                  window.location.href = 'template.html'
              }
-            //  LogUI.logCustomMessage({
-            //          name: 'ANSWER_FROM_USER',
-            //          metadata: {
-            //              text: document.getElementById("answer").value,
-            //              // status: playbackStatus,
-            //          },
-            //      });
          }
         </script>
        <script type="text/javascript">    
@@ -171,18 +164,16 @@
                 }
                 
             })
-            // form2.addEventListener('change', function(e) {   
-            //     fc2 = fc2 + 1;
-                
-            //     if (fc >=2 && fc2 >=2){
-                    
-            //         document.getElementById('myButton').disabled = false; 
-            //     }
-                
-            // })
         }
-
  </script>
+ <script type="text/javascript">
+    window.onload = function() {
+        setTimeout(function () {
+            var hid = document.getElementsByClassName("relevance");
+            hid[0].style.visibility = "visible";
+        }, 5000);
+}
+</script>
 
     </body>
 

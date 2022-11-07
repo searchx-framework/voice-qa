@@ -21,7 +21,7 @@
   <script type="text/javascript" src="js/logui.bundle.js"></script>
 
   <!-- The config object, specific for the page you are loading -->
-  <script type="text/javascript" src="js/logui-davoice.js"></script>
+  <script type="text/javascript" src="js/logui-datext.js"></script>
 
   <!-- The "Driving script" - that controls LogUI -->
   <script type="text/javascript" src="js/logui-driver.js"></script>
@@ -363,6 +363,13 @@ var feedback = {
           
       });
     sessionStorage.setItem("ospan", ospan);
+    LogUI.logCustomMessage({
+      name: 'OSPAN_RESULT',
+      metadata: {
+          metadata: p,
+          // status: playbackStatus,
+      },
+    });
       
     // window.onload(){ 
 
