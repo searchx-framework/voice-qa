@@ -25,6 +25,7 @@
 
   <!-- The "Driving script" - that controls LogUI -->
   <script type="text/javascript" src="js/logui-driver.js"></script>
+
   <script>
 
   /*
@@ -42,7 +43,7 @@
   //----- CUSTOMIZABLE VARIABLES -----------------------------------------
 
     minSetSize = 3 // starting length of each trial (i.e., min number of letters in a trial)
-    maxSetSize = 7 // ending length of each trial (i.e., max number of letters in a trial)
+    maxSetSize = 3 // ending length of each trial (i.e., max number of letters in a trial)
     repSet = 2 // number of times each set size should be repeated
     randomize = true // present different set sizes in random order. if false, set sizes will be presented in ascending order
     file_name = null // file name for data file. if null, a default name consisting of the participant ID and a unique number is chosen.
@@ -74,7 +75,7 @@
   var nPracticeTrials = letterMemDemoArray.length
   var nfullDemo = fullDemoArray.length
   var nCogLoadDemo = 0
-
+  var ospan_counter = 0
   var setSizes = letterMemDemoArray.concat(fullDemoArray, setSizes)
   var totalTrials = setSizes.length //total number of trials in the entire task (demo + main task)
 
@@ -126,7 +127,11 @@ var instructions = {
     },
     allow_backward: false,
     button_label_next: "Next",
-    show_clickable_nav: true
+    show_clickable_nav: true,
+    on_finish:function(){
+    //  console.log("S",sessionStorage.getItem("stroop"))
+     sessionStorage.setItem("ospan-start", 0)
+    }
   }
 
   var instructions2 = {
@@ -163,7 +168,12 @@ var instructions = {
     },
     allow_backward: false,
     button_label_next: "Next",
-    show_clickable_nav: true
+    show_clickable_nav: true,
+    on_finish: function(){
+      sessionStorage.setItem("ospan-start", 1)
+      var counterText = "<i class='fa fa-stopwatch'></i> You have 10 rounds to go";
+      document.getElementById("counter").innerHTML=counterText;
+    }
   }
 
   var cog_load_demo = {
@@ -265,7 +275,15 @@ var feedback = {
     button_label_next: "Next",
     show_clickable_nav: true,
     on_finish: function(){
-      nMathAcc = 0
+      nMathAcc = 0;
+      let ostart = sessionStorage.getItem("ospan-start");
+      // console.log("Os", ostart)
+      if (ostart == 1){
+        ospan_counter += 1
+      
+       var counterText = "<i class='fa fa-stopwatch'></i> You have " + (10-ospan_counter)+ " rounds to go";
+       document.getElementById("counter").innerHTML=counterText;
+     }
     }
   }
 
@@ -301,7 +319,8 @@ var feedback = {
     button_label_next: "Continue",
     show_clickable_nav: true,
     on_finish:function(){
-     console.log(sessionStorage.getItem("stroop"))
+    //  console.log("S",sessionStorage.getItem("stroop"))
+     sessionStorage.setItem("ospan-start", 0)
     }
   }
 
@@ -327,7 +346,7 @@ var feedback = {
      sessionStorage.setItem("ospan-result", p);
      var final_math_acc = 0;
      JSON.parse(p).forEach((element, idx) => {
-          if (idx>8){
+          if (idx>7){
             if (element.trial_type === "html-button-operationspan"){
               final_math_acc += parseInt(element.accuracy);   
             }
