@@ -106,11 +106,11 @@
                 //      name: 'NEXT_BUTTON',
                 //  });
                 var trials = Array.from(Array(48).keys());
-                sessionStorage.setItem('trials', JSON.wordify(trials))
+                sessionStorage.setItem('trials', JSON.stringify(trials))
                 sessionStorage.setItem('cong_acc', 0)
                 sessionStorage.setItem('incong_acc', 0)
-                sessionStorage.setItem('cong_time', JSON.wordify([]))
-                sessionStorage.setItem('incong_time', JSON.wordify([]))
+                sessionStorage.setItem('cong_time', JSON.stringify([]))
+                sessionStorage.setItem('incong_time', JSON.stringify([]))
                 // sessionStorage.setItem('prolific-id', form.prolificID.value)
                 // sessionStorage.setItem('serp', 'list_simple_serp')
                 // var pages = JSON.parse(localStorage.getItem('pages'))
