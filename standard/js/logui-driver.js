@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
     logUIConfigurationObject.applicationSpecificData.mode = mode;
     logUIConfigurationObject.applicationSpecificData.task = task ? task.id: null;
     logUIConfigurationObject.applicationSpecificData.answer = answer;
-    logUIConfigurationObject.logUIConfiguration.authorisationToken = 'eyJ0eXBlIjoibG9nVUktYXV0aG9yaXNhdGlvbi1vYmplY3QiLCJhcHBsaWNhdGlvbklEIjoiOWJkZGYwZTQtYzU4Yy00YTkwLTk0ZjEtMzk4NGMxNjlkNmRiIiwiZmxpZ2h0SUQiOiI0MzU2ODk3NC1jODE5LTQ5ZTEtOWJiOC0wNzRmODZmNGUzZTEifQ:1ot53H:Fyh7108tRlgP74sVvE48QNl-7ilHtPujD4f5dJ9nRRE';
+    logUIConfigurationObject.logUIConfiguration.authorisationToken = 'eyJ0eXBlIjoibG9nVUktYXV0aG9yaXNhdGlvbi1vYmplY3QiLCJhcHBsaWNhdGlvbklEIjoiOWJkZGYwZTQtYzU4Yy00YTkwLTk0ZjEtMzk4NGMxNjlkNmRiIiwiZmxpZ2h0SUQiOiJmNjAzMzFkZS0wOWQwLTQ3YWUtOGE2Zi0yY2YzYjU0NDI5ZGIifQ:1otVCH:cE3SiSK7Q8ONbRok41J3c5hU4x7aDxEibF-T2Vr-wY8';
     
     LogUI.init(logUIConfigurationObject);
 });
